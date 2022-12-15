@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const Characters = require('./Characters');
+const commentSchema = require('./Comment');
 
 const gameSchema = new Schema(
     {
@@ -28,7 +28,11 @@ const gameSchema = new Schema(
         link: {
             type: String
         },
-        characters: [Characters]
+        characters: {
+            type: String,
+            maxLength: 400
+        },
+        comments: [commentSchema]
     },
 );
 

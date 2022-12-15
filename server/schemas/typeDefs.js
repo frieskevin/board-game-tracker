@@ -12,18 +12,20 @@ const typeDefs = gql`
   type Game {
     _id: ID
     title: String!
-    username: String!
+    username: String
     winner: String
     score: String
     gameNotes: String
-    characters: [Characters]
+    comments: [Comment]
     image: String
     link: String
 
   }
-  type Characters {
+  type Comment {
     _id: ID
-    character: String!
+    commentBody: String
+    username: String
+    createdAt: String
   }
   type Auth {
     token: ID!
@@ -41,10 +43,8 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
     addGame(title: String!, username: String! winner: String, score: String, gameNotes: String, image: String, link: String): Game
     deleteGame(gameId: String!): User
-    addCharacter(gameId: String!, character: String!): Game
-    deleteCharacter(gameId: String!, character: String!): Game
-  }
-
+    addComment(gameId: ID!, commentBody: String!): Game
+   }
 `;
 
   module.exports = typeDefs;

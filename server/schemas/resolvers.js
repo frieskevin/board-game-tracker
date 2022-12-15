@@ -29,7 +29,7 @@ const resolvers = {
                 //.populate('characters');
         },
         games: async () => {
-            return Game.findOne({ _id });
+            return Game.find();
         },
     },
 
@@ -82,28 +82,19 @@ const resolvers = {
             }
             throw new AuthenticationError("You need to be logged in!");
         },
-        addCharacter: async (parent, { gameId, character }) => {
+        addComment: async (parent, { gameId, commentBody }, context) => {
             if (context.user) {
-                const character = await Game.findOneAndUpdate(
+                const comment = await Game.findOneAndUpdate(
                     { _id: gameId },
-                    { $addToSet: { characters: { character } } },
+                    { $push: { comments: { commentBody, username: context.user.username } } },
                     { new: true, runValidators: true }
-                )
-                return character;
+                );
+                console.log(comment, "resolvers line 92");
+                return comment;
             }
             throw new AuthenticationError("You need to be logged in!");
         },
-        deleteCharacter: async (parent, { gameId, character }) => {
-            if (context.user) {
-                const updatedCharacter = await Game.findOneAndUpdate(
-                    { _id: gameId },
-                    { $pull: { characters: { character } } },
-                    { new: true }
-                )
-                return updatedCharacter;
-            }
-            throw new AuthenticationError("You need to be logged in!");
-        },
+      
     }
 }
 
