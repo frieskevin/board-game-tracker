@@ -16,6 +16,7 @@ const typeDefs = gql`
     winner: String
     score: String
     gameNotes: String
+    commentCount: Int
     comments: [Comment]
     createdAt: String
     image: String
