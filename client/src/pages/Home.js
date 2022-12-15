@@ -1,35 +1,32 @@
 import React from 'react';
-import { useQuery } from '@apollo/client';
-import { QUERY_GAMES } from '../utils/queries';
-import GameList from '../components/GameList';
+import { Navigate } from 'react-router-dom';
+//import { useQuery } from '@apollo/client';
+//import { QUERY_GAMES } from '../utils/queries';
+//import GameList from '../components/GameList';
 import Auth from '../utils/auth';
+//import SignUpModal from '../components/Modal/SignUpModal';
+//import LoginModal from '../components/Modal/LoginModal';
+//import Dashboard from '../pages/Dashboard';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import SignUpModal from '../components/Modal/SignUpModal';
+import LoginModal from '../components/Modal/LoginModal';
 
 const Home = () => {
-    const { loading, data } = useQuery(QUERY_GAMES);
     const loggedIn = Auth.loggedIn();
-    const games = data?.games || [];
-
+    if(loggedIn) {
+        return (
+            <Navigate to="/dashboard" />
+        );
+    } else {
+    
     return (
         <main>
-            <div className=''>
-                {loggedIn && (
-                    <button className=''>
-                        Create Game
-                    </button>
-                )}
-            </div>
-            <div className={`${loggedIn && ''}`}>
-                {loading ? (
-                    <div>Loading...</div>
-                ) : (
-                    <GameList
-                        games={games}
-                        title="Games Played"
-                    />
-                )}
-            </div>
+            <SignUpModal />
+            <LoginModal />
         </main>
     );
 };
+};
+
 
 export default Home;

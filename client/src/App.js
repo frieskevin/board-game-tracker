@@ -2,6 +2,11 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import Header from '../src/components/Header';
+import Footer from '../src/components/Footer';
+import Home from '../src/pages/Home';
+import Dashboard from '../src/pages/Dashboard';
+import Signup from '../src/pages/Signup';
 
 const httpLink = createHttpLink({
   uri: '/graphql'
@@ -25,22 +30,17 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
+      <Router>
+        <Header />
+        <Routes>
 
-          <div className="App">
-            <header className="App-header">
-              <p>
-                Edit <code>src/App.js</code> and save to reload.
-              </p>
-              <a
-                className="App-link"
-                href="https://reactjs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Learn React
-              </a>
-            </header>
-          </div>
+          <Route path="/" element={<Home />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/signup" element={<Signup />} />
+        </Routes>
+        <Footer />
+      </Router>
+
 
     </ApolloProvider>
   );
