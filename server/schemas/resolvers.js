@@ -20,13 +20,11 @@ const resolvers = {
             return User.find()
                 .select('-__v -password')
                 .populate('games')
-               // .populate('characters');
         },
         user: async (parent, { username }) => {
             return User.findOne({ username })
                 .select('-__v -password')
                 .populate('games')
-                //.populate('characters');
         },
         games: async () => {
             return Game.find();
