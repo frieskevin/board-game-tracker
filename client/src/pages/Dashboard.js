@@ -1,5 +1,4 @@
 import React from 'react';
-import { Navigate } from 'react-router';
 import { useQuery } from '@apollo/client';
 import { QUERY_GAMES } from '../utils/queries';
 import GameList from '../components/GameList';

@@ -6,7 +6,6 @@ import Header from '../src/components/Header';
 import Footer from '../src/components/Footer';
 import Home from '../src/pages/Home';
 import Dashboard from '../src/pages/Dashboard';
-import Login from '../src/pages/Login';
 import Signup from '../src/pages/Signup';
 
 const httpLink = createHttpLink({
@@ -37,7 +36,6 @@ function App() {
 
           <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>
         <Footer />

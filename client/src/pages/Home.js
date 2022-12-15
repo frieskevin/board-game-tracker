@@ -6,22 +6,27 @@ import { Navigate } from 'react-router-dom';
 import Auth from '../utils/auth';
 //import SignUpModal from '../components/Modal/SignUpModal';
 //import LoginModal from '../components/Modal/LoginModal';
-import Dashboard from '../pages/Dashboard';
+//import Dashboard from '../pages/Dashboard';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import SignUpModal from '../components/Modal/SignUpModal';
+import LoginModal from '../components/Modal/LoginModal';
 
 const Home = () => {
-    if(!Auth.loggedIn()) {
-        return <Navigate replace to="/" />; 
-     } else {
-
+    const loggedIn = Auth.loggedIn();
+    if(loggedIn) {
+        return (
+            <Navigate to="/dashboard" />
+        );
+    } else {
+    
     return (
         <main>
-            <>
-              <Dashboard />
-            </>
+            <SignUpModal />
+            <LoginModal />
         </main>
     );
 };
 };
+
 
 export default Home;

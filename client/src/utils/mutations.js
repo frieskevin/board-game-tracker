@@ -12,15 +12,16 @@ export const LOGIN = gql`
     }`;
 
 export const ADD_USER = gql`
-    mutation addUser($username: String!, $email: String!, $password: String!) {
-        addUser(username: $username, email: $email, password: $password) {
-            token
-            user {
-                _id
-                username
-            }
-        }
-    }`;
+mutation addUser($username: String!, $email: String!, $password: String!) {
+    addUser(username: $username, email: $email, password: $password) {
+      token
+      user {
+        email
+        password
+        username  
+      }
+    }
+  }`;
 
 export const ADD_GAME = gql`
     mutation addGame($title: String!, $username: String!, $winner: String, $score: String, $gameNotes: String, $image: String, $link: String) {
