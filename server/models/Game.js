@@ -22,6 +22,10 @@ const gameSchema = new Schema(
             default: '',
             maxLength: 400
         },
+        createdAt: {
+            type: Date,
+            default: Date.now
+        },
         image: {
             type: String
         },
