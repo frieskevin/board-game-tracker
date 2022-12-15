@@ -9,7 +9,6 @@
   "scripts": {
     "start": "node server.js",
     "watch": "nodemon server.js"
-
   },
   "name": "server",
   "version": "1.0.0",
