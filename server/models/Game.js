@@ -38,8 +38,16 @@ const gameSchema = new Schema(
         },
         comments: [commentSchema]
     },
+    {
+        toJSON: {
+          getters: true
+        }
+      }
 );
 
+gameSchema.virtual('commentCount').get(function(){
+    return this.comments.length;
+});
 const Game = model('Game', gameSchema);
 
 module.exports = Game;
