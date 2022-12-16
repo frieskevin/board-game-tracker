@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../../index.css";
 import { useMutation } from '@apollo/client';
 import { ADD_GAME } from '../../utils/mutations';
 import {
@@ -19,50 +21,50 @@ function AddGameModal(props) {
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
 
-    const [formState, setFormState] = useState({ 
-        title: '', 
-        username: '', 
-        winner:'', 
+    const [formState, setFormState] = useState({
+        title: '',
+        username: '',
+        winner: '',
         score: '',
         gameNotes: '',
         link: '',
         image: '',
-     });
+    });
 
-     const [addGame, { error }] = useMutation(ADD_GAME);
+    const [addGame, { error }] = useMutation(ADD_GAME);
 
-     const handleChange = (event) => {
+    const handleChange = (event) => {
         const { name, value } = event.target;
 
         setFormState({
-           ...formState, 
-           [name]: value, 
+            ...formState,
+            [name]: value,
         });
-     };
+    };
 
-     const handleFormSubmit = async (event) => {
+    const handleFormSubmit = async (event) => {
         event.preventDefault();
 
         try {
             await addGame({
                 variables: { ...formState },
             });
-            
+
         } catch (error) {
             console.log(error)
         }
 
         //clear form state
         setFormState({
-            title: '', 
-            username: '', 
-            winner:'', 
+            title: '',
+            username: '',
+            winner: '',
             score: '',
             gameNotes: '',
             link: '',
             image: '',
         });
-     };
+    };
 
     return (
         <div>
@@ -71,7 +73,7 @@ function AddGameModal(props) {
             </Button>
             <Modal isOpen={modal} toggle={toggle} fullscreen>
                 <ModalHeader className="text-center" toggle={toggle}>Game Card</ModalHeader>
-                <ModalBody>
+                <ModalBody className="addGameModal">
                     <Form onSubmit={handleFormSubmit}>
                         <Row>
                             <Col md={6}>
@@ -178,17 +180,18 @@ function AddGameModal(props) {
                                 </Col>
                             </Row>
                         </FormGroup>
-                        <Button color="primary" type="submit" value="submit">
-                        Add Game
-                    </Button>
+                        <ModalFooter>
+                            {' '}
+                            <Button color="primary" type="submit" value="submit">
+                                Add Game
+                            </Button>
+                            <Button color="secondary" onClick={toggle}>
+                                Cancel
+                            </Button>
+                        </ModalFooter>
                     </Form>
                 </ModalBody>
-                <ModalFooter>
-                   {' '}
-                    <Button color="secondary" onClick={toggle}>
-                        Cancel
-                    </Button>
-                </ModalFooter>
+
             </Modal>
         </div>
     );

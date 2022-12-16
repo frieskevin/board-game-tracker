@@ -1,13 +1,38 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+    --primary-color: #b1bcc0;
+    --secondary-color: #15cd64;
+    --tertiary-color: #ad0002;
+    --quaternary-color: #00247c;
+    --quinary-color: #c6b12c;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+.addGameModal {
+    background-color:  var(--quaternary-color);
+}
+
+.nav-title {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-family: Luckiest Guy;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-family: Luckiest Guy;
+    color: var(--primary-color);
+}
+
+.nav-background {
+    background-color: var(--tertiary-color);
+}
+
+#main-footer {
+    background-color: var(--secondary-color);
+    height: 4rem;
+}
+
+.footer-div {
+    padding-top: 1rem;
+    font-family: Luckiest Guy;
 }
