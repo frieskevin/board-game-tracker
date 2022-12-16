@@ -20,13 +20,13 @@ function AddGameModal(props) {
     const toggle = () => setModal(!modal);
 
     const [formState, setFormState] = useState({ 
-        gameModalTitle: '', 
-        gameModalUsername: '', 
-        gameModalWinner:'', 
-        gameModalScore: '',
-        gameModalNotes: '',
-        gameModalLink: '',
-        gameModalImage: '',
+        title: '', 
+        username: '', 
+        winner:'', 
+        score: '',
+        gameNotes: '',
+        link: '',
+        image: '',
      });
 
      const [addGame, { error }] = useMutation(ADD_GAME);
@@ -45,12 +45,23 @@ function AddGameModal(props) {
 
         try {
             await addGame({
-                variables: {...formState }
-            })
-            console.log(formState);
+                variables: { ...formState },
+            });
+            
         } catch (error) {
             console.log(error)
         }
+
+        //clear form state
+        setFormState({
+            title: '', 
+            username: '', 
+            winner:'', 
+            score: '',
+            gameNotes: '',
+            link: '',
+            image: '',
+        });
      };
 
     return (
@@ -65,30 +76,30 @@ function AddGameModal(props) {
                         <Row>
                             <Col md={6}>
                                 <FormGroup>
-                                    <Label for="gameModalTitle">
+                                    <Label for="title">
                                         Game Title
                                     </Label>
                                     <Input
-                                        id="gameModalTitle"
-                                        name="gameModalTitle"
+                                        id="title"
+                                        name="title"
                                         placeholder="Add Your Game's Title Here"
                                         type="text"
-                                        value={formState.gameModalTitle}
+                                        value={formState.title}
                                         onChange={handleChange}
                                     />
                                 </FormGroup>
                             </Col>
                             <Col md={6}>
                                 <FormGroup>
-                                    <Label for="gameModalUsername">
+                                    <Label for="username">
                                         Players
                                     </Label>
                                     <Input
-                                        id="gamemodalUsername"
-                                        name="gameModalUsername"
+                                        id="username"
+                                        name="username"
                                         placeholder="Add the Players Here"
                                         type="text"
-                                        value={formState.gameModalUsername}
+                                        value={formState.username}
                                         onChange={handleChange}
                                     />
                                 </FormGroup>
@@ -99,37 +110,37 @@ function AddGameModal(props) {
                                 Winner
                             </Label>
                             <Input
-                                id="gameModalWinner"
-                                name="gameModalWinner"
+                                id="winner"
+                                name="winner"
                                 placeholder="Who Won?"
                                 type="Text"
-                                value={formState.gameModalWinner}
+                                value={formState.winner}
                                 onChange={handleChange}
                             />
                         </FormGroup>
                         <FormGroup>
-                            <Label for="gameModalScore">
+                            <Label for="score">
                                 Score
                             </Label>
                             <Input
-                                id="gameModalScore"
-                                name="gameModalScore"
+                                id="score"
+                                name="score"
                                 placeholder="What was the score?"
                                 type="text"
-                                value={formState.gameModalScore}
+                                value={formState.score}
                                 onChange={handleChange}
                             />
                         </FormGroup>
                         <FormGroup>
-                            <Label for="gameModalNotes">
+                            <Label for="gameNotes">
                                 Game Notes
                             </Label>
                             <Input
-                                id="gameModalNotes"
-                                name="gameModalNotes"
+                                id="gameNotes"
+                                name="gameNotes"
                                 placeholder="Anything you would like to rememeber for next Game?"
                                 type="textarea"
-                                value={formState.gameModalNotes}
+                                value={formState.gameNotes}
                                 onChange={handleChange}
                             />
                         </FormGroup>
@@ -137,30 +148,30 @@ function AddGameModal(props) {
                             <Row>
                                 <Col md={6}>
                                     <FormGroup>
-                                        <Label for="gameModalLink">
+                                        <Label for="link">
                                             Link
                                         </Label>
                                         <Input
-                                            id="gameModalLink"
-                                            name="gameModalLink"
+                                            id="link"
+                                            name="link"
                                             placeholder="Add a link to the game rules."
                                             type="text"
-                                            value={formState.gameModalLink}
+                                            value={formState.link}
                                             onChange={handleChange}
                                         />
                                     </FormGroup>
                                 </Col>
                                 <Col md={6}>
                                     <FormGroup>
-                                        <Label for="gameModalImage">
+                                        <Label for="image">
                                             Image
                                         </Label>
                                         <Input
-                                            id="gameModalImage"
-                                            name="gameModalImage"
+                                            id="image"
+                                            name="image"
                                             placeholder="Add an image of your Game."
                                             type="text"
-                                            value={formState.gameModalImage}
+                                            value={formState.image}
                                             onChange={handleChange}
                                         />
                                     </FormGroup>
