@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../../utils/mutations';
-import Auth from '../../utils/auth'
+import Auth from '../../utils/auth';
 import {
     Button,
     Modal,
@@ -19,42 +19,45 @@ function SignUpModal(args) {
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
 
+
+
     const [formState, setFormState] = useState({ username: '', email: '', password: '' });
     const [addUser, { error }] = useMutation(ADD_USER);
-    
-  
+
+
     // update state based on form input changes
     const handleChange = (event) => {
-      const { name, value } = event.target;
-  
-      setFormState({
-        ...formState,
-        [name]: value,
-      });
+        const { name, value } = event.target;
+
+        setFormState({
+            ...formState,
+            [name]: value,
+        });
     };
-  
+
     // submit form
     const handleFormSubmit = async (event) => {
-      event.preventDefault();
-  
-      try {
-        const { data } = await addUser({
-          variables: { ...formState }
+        event.preventDefault();
+
+        try {
+            const { data } = await addUser({
+                variables: { ...formState }
+            });
+
+            console.log(data);
+            Auth.Login(data.adduser.token);
+        } catch (e) {
+            console.error(e);
+        }
+
+        // clear form values
+        setFormState({
+            email: '',
+            password: '',
+            username: ''
         });
-  
-        console.log(data);
-        Auth.Login(data.adduser.token);
-      } catch (e) {
-        console.error(e);
-      }
-  
-      // clear form values
-      setFormState({
-        email: '',
-        password: '',
-        username: ''
-      });
     };
+
 
     return (
         <div>
@@ -110,19 +113,22 @@ function SignUpModal(args) {
                             />
                         </Row>
                         <Button type="submit" value="submit">
-                        Submit
-                    </Button>
+                            Submit
+                        </Button>
                     </Form>
                 </ModalBody>
                 <ModalFooter>
-                   
+
                     <Button color="secondary" onClick={toggle}>
                         Cancel
                     </Button>
                 </ModalFooter>
+
             </Modal>
         </div>
     );
+
+
 }
 
 export default SignUpModal;

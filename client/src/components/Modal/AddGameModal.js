@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useMutation } from '@apollo/client';
+import { ADD_GAME } from '../../utils/mutations';
 import {
     Button,
     Modal,
@@ -9,15 +11,58 @@ import {
     FormGroup,
     Label,
     Input,
-    FormText,
     Row,
     Col,
 } from 'reactstrap';
 
 function AddGameModal(props) {
     const [modal, setModal] = useState(false);
-
     const toggle = () => setModal(!modal);
+
+    const [formState, setFormState] = useState({ 
+        title: '', 
+        username: '', 
+        winner:'', 
+        score: '',
+        gameNotes: '',
+        link: '',
+        image: '',
+     });
+
+     const [addGame, { error }] = useMutation(ADD_GAME);
+
+     const handleChange = (event) => {
+        const { name, value } = event.target;
+
+        setFormState({
+           ...formState, 
+           [name]: value, 
+        });
+     };
+
+     const handleFormSubmit = async (event) => {
+        event.preventDefault();
+
+        try {
+            await addGame({
+                variables: { ...formState },
+            });
+            
+        } catch (error) {
+            console.log(error)
+        }
+
+        //clear form state
+        setFormState({
+            title: '', 
+            username: '', 
+            winner:'', 
+            score: '',
+            gameNotes: '',
+            link: '',
+            image: '',
+        });
+     };
 
     return (
         <div>
@@ -27,104 +72,119 @@ function AddGameModal(props) {
             <Modal isOpen={modal} toggle={toggle} fullscreen>
                 <ModalHeader className="text-center" toggle={toggle}>Game Card</ModalHeader>
                 <ModalBody>
-                    <Form>
+                    <Form onSubmit={handleFormSubmit}>
                         <Row>
                             <Col md={6}>
                                 <FormGroup>
-                                    <Label for="exampleEmail">
+                                    <Label for="title">
                                         Game Title
                                     </Label>
                                     <Input
-                                        id="game-title"
-                                        name="game-modal-title"
+                                        id="title"
+                                        name="title"
                                         placeholder="Add Your Game's Title Here"
                                         type="text"
+                                        value={formState.title}
+                                        onChange={handleChange}
                                     />
                                 </FormGroup>
                             </Col>
                             <Col md={6}>
                                 <FormGroup>
-                                    <Label for="Players">
+                                    <Label for="username">
                                         Players
                                     </Label>
                                     <Input
-                                        id="players"
-                                        name="players-game-modal"
+                                        id="username"
+                                        name="username"
                                         placeholder="Add the Players Here"
                                         type="text"
+                                        value={formState.username}
+                                        onChange={handleChange}
                                     />
                                 </FormGroup>
                             </Col>
                         </Row>
                         <FormGroup>
-                            <Label for="exampleEmail">
+                            <Label for="gameModalWinner">
                                 Winner
                             </Label>
                             <Input
                                 id="winner"
-                                name="winner-game-modal"
+                                name="winner"
                                 placeholder="Who Won?"
                                 type="Text"
+                                value={formState.winner}
+                                onChange={handleChange}
                             />
                         </FormGroup>
                         <FormGroup>
-                            <Label for="Score">
+                            <Label for="score">
                                 Score
                             </Label>
                             <Input
                                 id="score"
-                                name="score-game-modal"
+                                name="score"
                                 placeholder="What was the score?"
                                 type="text"
+                                value={formState.score}
+                                onChange={handleChange}
                             />
                         </FormGroup>
                         <FormGroup>
-                            <Label for="Game-notes">
+                            <Label for="gameNotes">
                                 Game Notes
                             </Label>
                             <Input
-                                id="Game-notes-textarea"
-                                name="game-notes-modal"
+                                id="gameNotes"
+                                name="gameNotes"
                                 placeholder="Anything you would like to rememeber for next Game?"
                                 type="textarea"
+                                value={formState.gameNotes}
+                                onChange={handleChange}
                             />
                         </FormGroup>
                         <FormGroup>
                             <Row>
                                 <Col md={6}>
                                     <FormGroup>
-                                        <Label for="game-link">
+                                        <Label for="link">
                                             Link
                                         </Label>
                                         <Input
-                                            id="game-link"
-                                            name="game-link-in-modal"
+                                            id="link"
+                                            name="link"
                                             placeholder="Add a link to the game rules."
                                             type="text"
+                                            value={formState.link}
+                                            onChange={handleChange}
                                         />
                                     </FormGroup>
                                 </Col>
                                 <Col md={6}>
                                     <FormGroup>
-                                        <Label for="game-image">
+                                        <Label for="image">
                                             Image
                                         </Label>
                                         <Input
-                                            id="image-in-modal"
-                                            name="image-in-modal"
+                                            id="image"
+                                            name="image"
                                             placeholder="Add an image of your Game."
                                             type="text"
+                                            value={formState.image}
+                                            onChange={handleChange}
                                         />
                                     </FormGroup>
                                 </Col>
                             </Row>
                         </FormGroup>
+                        <Button color="primary" type="submit" value="submit">
+                        Add Game
+                    </Button>
                     </Form>
                 </ModalBody>
                 <ModalFooter>
-                    <Button color="primary" onClick={toggle}>
-                        Add Game
-                    </Button>{' '}
+                   {' '}
                     <Button color="secondary" onClick={toggle}>
                         Cancel
                     </Button>

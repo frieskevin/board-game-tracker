@@ -24,18 +24,19 @@ mutation addUser($username: String!, $email: String!, $password: String!) {
   }`;
 
 export const ADD_GAME = gql`
-    mutation addGame($title: String!, $username: String!, $winner: String, $score: String, $gameNotes: String, $image: String, $link: String) {
-        addGame(title: $title, username: $username, winner: $winner, score: $score, gameNotes: $gameNotes, image: $image, link: $link) {
-            _id
-            title
-            username
-            winner
-            score
-            gameNotes
-            image
-            link
-        }
-    }`
+mutation AddGame($title: String!, $username: String!, $winner: String, $score: String, $gameNotes: String) {
+    addGame(title: $title, username: $username, winner: $winner, score: $score, gameNotes: $gameNotes) {
+        _id
+        username  
+        title 
+        winner
+        score
+        gameNotes
+        image
+        link
+        createdAt
+    }
+  }`;
 
 export const DELETE_GAME = gql`
     mutation deleteGame($gameId: String!) {
