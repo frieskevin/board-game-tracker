@@ -10,10 +10,10 @@ const Dashboard = () => {
     const { loading, data } = useQuery(QUERY_GAMES);
     const loggedIn = Auth.loggedIn();
     const games = data?.games || [];
+
   
     return (
         <main>
-            
             <div className=''>
                 {loggedIn && (
                      <AddGameModal /> 

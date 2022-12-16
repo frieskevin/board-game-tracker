@@ -40,7 +40,7 @@ function LoginModal(args) {
       try {
         const { data } = await login({
           variables: { ...formState }
-        });
+        })
   
         Auth.login(data.login.token)
       } catch (e) {
@@ -54,6 +54,7 @@ function LoginModal(args) {
       });
     };
 
+    
   return (
     <div>
       <Button color="danger" onClick={toggle}>
@@ -104,9 +105,6 @@ function LoginModal(args) {
           {error && <div>Login Failed</div>}
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" type='submit'>
-            Login
-          </Button>{' '}
           <Button color="secondary" onClick={toggle}>
             Cancel
           </Button>
