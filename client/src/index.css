@@ -6,9 +6,47 @@
     --quinary-color: #c6b12c;
 }
 
+.font {
+    font-family: Luckiest Guy;
+}
 
+/*modal designs*/
 .addGameModal {
     background-color:  var(--quaternary-color);
+}
+
+.game-label {
+    color: var(--primary-color);
+}
+.game-modal-header {
+    height: 5rem;
+}
+
+.submit-button {
+    margin-right: 1rem;
+    margin-top: 1rem;
+}
+
+.signup-cancel-button {
+    margin-top: 1rem;
+}
+
+.login-modal {
+    background-color: var(--primary-color);
+}
+
+.login-button {
+    margin-right: 1rem;
+    margin-top: 1rem;
+    background-color: #00247c;
+}
+
+.login-cancel-button {
+    margin-top: 1rem;
+}
+
+.signup-modal-body {
+    background-color: var(--quinary-color);
 }
 
 .nav-title {

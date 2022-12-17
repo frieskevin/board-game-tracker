@@ -20,50 +20,50 @@ function LoginModal(args) {
   const toggle = () => setModal(!modal);
 
   const [formState, setFormState] = useState({ email: '', password: '' });
-    const [login, { error }] = useMutation(LOGIN);
-    
-  
-    // update state based on form input changes
-    const handleChange = (event) => {
-      const { name, value } = event.target;
-  
-      setFormState({
-        ...formState,
-        [name]: value,
-      });
-    };
-  
-    // submit form
-    const handleFormSubmit = async (event) => {
-      event.preventDefault();
-  
-      try {
-        const { data } = await login({
-          variables: { ...formState }
-        })
-  
-        Auth.login(data.login.token)
-      } catch (e) {
-        console.error(e);
-      }
-  
-      // clear form values
-      setFormState({
-        email: '',
-        password: '',
-      });
-    };
+  const [login, { error }] = useMutation(LOGIN);
 
-    
+
+  // update state based on form input changes
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
+  // submit form
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const { data } = await login({
+        variables: { ...formState }
+      })
+
+      Auth.login(data.login.token)
+    } catch (e) {
+      console.error(e);
+    }
+
+    // clear form values
+    setFormState({
+      email: '',
+      password: '',
+    });
+  };
+
+
   return (
     <div>
       <Button color="danger" onClick={toggle}>
         Login
       </Button>
       <Modal isOpen={modal} toggle={toggle} {...args}>
-        <ModalHeader toggle={toggle}></ModalHeader>
-        <ModalBody>
-          <Form onSubmit={handleFormSubmit}>
+        <ModalHeader className="font" toggle={toggle}>Login!</ModalHeader>
+        <ModalBody className="login-modal">
+          <Form  onSubmit={handleFormSubmit}>
             <Row className="row-cols-lg-auto g-3 align-items-center">
               <Col>
                 <Label
@@ -74,6 +74,7 @@ function LoginModal(args) {
                 </Label>
                 <Input
                   id="login-email"
+                  className="font"
                   name="email"
                   placeholder="email"
                   type="email"
@@ -90,6 +91,7 @@ function LoginModal(args) {
                 </Label>
                 <Input
                   id="login-password"
+                  className="font"
                   name="password"
                   placeholder="password"
                   type="password"
@@ -97,18 +99,21 @@ function LoginModal(args) {
                   onChange={handleChange}
                 />
               </Col>
-              </Row>
-              <Button color="primary" type='submit' value="submit">
-            Login
-          </Button>
-          </Form>
-          {error && <div>Login Failed</div>}
-        </ModalBody>
-        <ModalFooter>
-          <Button color="secondary" onClick={toggle}>
-            Cancel
-          </Button>
-        </ModalFooter>
+            </Row>
+            <Button className="login-button font" type='submit' value="submit">
+              Login
+            </Button>
+            {error && <div>Login Failed</div>}
+            <Button className="login-cancel-button font" color="secondary" onClick={toggle}>
+              Cancel
+            </Button>
+            </Form>
+            </ModalBody>
+            <ModalFooter>
+           
+          </ModalFooter>
+          
+          
       </Modal>
     </div>
   );
