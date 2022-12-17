@@ -29,6 +29,9 @@ const resolvers = {
         games: async () => {
             return Game.find();
         },
+        game: async (parent, { _id }) => {
+            return Game.findOne({ _id });
+        }
     },
 
     Mutation: {

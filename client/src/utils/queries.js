@@ -70,8 +70,8 @@ export const QUERY_GAMES = gql`
 }`;
 
 export const QUERY_GAME = gql`
-    query game($_id: ID) {
-        game(_id: $_id) {
+    query game($id: ID) {
+        game(_id: $id) {
             _id
             title
             username
@@ -80,6 +80,7 @@ export const QUERY_GAME = gql`
             gameNotes
             createdAt
             comments {
+                _id
                 commentBody
                 username
                 createdAt
