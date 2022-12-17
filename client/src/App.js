@@ -36,11 +36,8 @@ function App() {
       <Router>
         <Header />
         <Routes>
-            path="/game/:id"
-            element={<SingleGame />}
-          />
+          <Route path="/game/:id"element={<SingleGame />} />
           <Route path="/profile/:username" element={<Profile />} />
-
           <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/game/:id" element={<CommentList />} />
