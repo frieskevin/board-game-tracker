@@ -78,7 +78,7 @@ export const QUERY_GAMES = gql`
 }`;
 
 export const QUERY_GAME = gql`
-    query game($id: ID) {
+    query game($id: ID!) {
         game(_id: $id) {
             _id
             title
