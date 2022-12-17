@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../../utils/mutations';
 import Auth from '../../utils/auth';
+import { Navigate } from 'react-router-dom';
 import {
     Button,
     Modal,
     ModalHeader,
     ModalBody,
-    ModalFooter,
     Input,
     Col,
     Label,
@@ -22,7 +22,7 @@ function SignUpModal(args) {
 
 
     const [formState, setFormState] = useState({ username: '', email: '', password: '' });
-    const [addUser, { error }] = useMutation(ADD_USER);
+    const [addUser] = useMutation(ADD_USER);
 
 
     // update state based on form input changes
@@ -45,17 +45,22 @@ function SignUpModal(args) {
             });
 
             console.log(data);
-            Auth.Login(data.adduser.token);
+            Auth.login(data.addUser.token);
+            console.log(data.addUser.token, "in signup modal");
         } catch (e) {
             console.error(e);
         }
-
         // clear form values
         setFormState({
             email: '',
             password: '',
             username: ''
         });
+        const loggedIn = Auth.loggedIn();
+        if(loggedIn) {
+        <Navigate to="/dashboard" />
+        };
+
     };
 
 
@@ -66,7 +71,7 @@ function SignUpModal(args) {
             </Button>
             <Modal isOpen={modal} toggle={toggle} {...args}>
                 <ModalHeader toggle={toggle}>Sign Up!</ModalHeader>
-                <ModalBody>
+                <ModalBody className="signup-modal-body">
                     <Form onSubmit={handleFormSubmit}>
                         <Row className="row-cols-lg-auto g-3 align-items-center">
                             <Col>
@@ -84,8 +89,7 @@ function SignUpModal(args) {
                             <Col>
                                 <Label
                                     className="visually-hidden"
-                                    for="examplePassword"
-                                >
+                                    for="examplePassword">
                                     Password
                                 </Label>
                                 <Input
@@ -112,18 +116,14 @@ function SignUpModal(args) {
                                 onChange={handleChange}
                             />
                         </Row>
-                        <Button type="submit" value="submit">
+                        <Button className="submit-button" type="submit" value="submit">
                             Submit
+                        </Button>
+                        <Button className="signup-cancel-button" color="secondary" onClick={toggle}>
+                            Cancel
                         </Button>
                     </Form>
                 </ModalBody>
-                <ModalFooter>
-
-                    <Button color="secondary" onClick={toggle}>
-                        Cancel
-                    </Button>
-                </ModalFooter>
-
             </Modal>
         </div>
     );

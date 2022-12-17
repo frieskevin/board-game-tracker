@@ -6,9 +6,22 @@
     --quinary-color: #c6b12c;
 }
 
-
+/*modal designs*/
 .addGameModal {
     background-color:  var(--quaternary-color);
+}
+
+.submit-button {
+    margin-right: 1rem;
+    margin-top: 1rem;
+}
+
+.signup-cancel-button {
+    margin-top: 1rem;
+}
+
+.signup-modal-body {
+    background-color: var(--quinary-color);
 }
 
 .nav-title {
