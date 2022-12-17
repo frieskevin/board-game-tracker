@@ -6,10 +6,11 @@ import Header from '../src/components/Header';
 import Footer from '../src/components/Footer';
 import Home from '../src/pages/Home';
 import Dashboard from '../src/pages/Dashboard';
+import SingleGame from './pages/SingleGame';
 import Profile from '../src/pages/Profile';
 
 const httpLink = createHttpLink({
-  uri: '/graphql'
+  uri: '/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -33,6 +34,9 @@ function App() {
       <Router>
         <Header />
         <Routes>
+            path="/game/:id"
+            element={<SingleGame />}
+          />
           <Route path="/profile/:username" element={<Profile />} />
           <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
