@@ -9,7 +9,7 @@ import Dashboard from '../src/pages/Dashboard';
 import SingleGame from './pages/SingleGame';
 
 const httpLink = createHttpLink({
-  uri: '/graphql'
+  uri: '/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
