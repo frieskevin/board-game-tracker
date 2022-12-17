@@ -8,7 +8,6 @@ import {
     Modal,
     ModalHeader,
     ModalBody,
-    ModalFooter,
     Form,
     FormGroup,
     Label,
@@ -72,17 +71,18 @@ function AddGameModal(props) {
                 Add Game!
             </Button>
             <Modal isOpen={modal} toggle={toggle} fullscreen>
-                <ModalHeader className="text-center" toggle={toggle}>Game Card</ModalHeader>
+                <ModalHeader size="lg" className="font game-modal-header" toggle={toggle}>Add Game!</ModalHeader>
                 <ModalBody className="addGameModal">
                     <Form onSubmit={handleFormSubmit}>
                         <Row>
                             <Col md={6}>
                                 <FormGroup>
-                                    <Label for="title">
+                                    <Label className="game-label font" for="title">
                                         Game Title
                                     </Label>
                                     <Input
                                         id="title"
+                                        className="font"
                                         name="title"
                                         placeholder="Add Your Game's Title Here"
                                         type="text"
@@ -93,11 +93,12 @@ function AddGameModal(props) {
                             </Col>
                             <Col md={6}>
                                 <FormGroup>
-                                    <Label for="username">
+                                    <Label className="game-label font" for="username">
                                         Players
                                     </Label>
                                     <Input
                                         id="username"
+                                        className="font"
                                         name="username"
                                         placeholder="Add the Players Here"
                                         type="text"
@@ -108,11 +109,12 @@ function AddGameModal(props) {
                             </Col>
                         </Row>
                         <FormGroup>
-                            <Label for="gameModalWinner">
+                            <Label className="font game-label" for="gameModalWinner">
                                 Winner
                             </Label>
                             <Input
                                 id="winner"
+                                className="font"
                                 name="winner"
                                 placeholder="Who Won?"
                                 type="Text"
@@ -121,11 +123,12 @@ function AddGameModal(props) {
                             />
                         </FormGroup>
                         <FormGroup>
-                            <Label for="score">
+                            <Label className="game-label font" for="score">
                                 Score
                             </Label>
                             <Input
                                 id="score"
+                                className="font"
                                 name="score"
                                 placeholder="What was the score?"
                                 type="text"
@@ -134,11 +137,12 @@ function AddGameModal(props) {
                             />
                         </FormGroup>
                         <FormGroup>
-                            <Label for="gameNotes">
+                            <Label className="game-label font" for="gameNotes">
                                 Game Notes
                             </Label>
                             <Input
                                 id="gameNotes"
+                                className="font"
                                 name="gameNotes"
                                 placeholder="Anything you would like to rememeber for next Game?"
                                 type="textarea"
@@ -150,11 +154,12 @@ function AddGameModal(props) {
                             <Row>
                                 <Col md={6}>
                                     <FormGroup>
-                                        <Label for="link">
+                                        <Label className="game-label font" for="link">
                                             Link
                                         </Label>
                                         <Input
                                             id="link"
+                                            className="font"
                                             name="link"
                                             placeholder="Add a link to the game rules."
                                             type="text"
@@ -165,11 +170,12 @@ function AddGameModal(props) {
                                 </Col>
                                 <Col md={6}>
                                     <FormGroup>
-                                        <Label for="image">
+                                        <Label className="game-label font" for="image">
                                             Image
                                         </Label>
                                         <Input
                                             id="image"
+                                            className="font"
                                             name="image"
                                             placeholder="Add an image of your Game."
                                             type="text"
@@ -179,19 +185,17 @@ function AddGameModal(props) {
                                     </FormGroup>
                                 </Col>
                             </Row>
-                        </FormGroup>
-                        <ModalFooter>
                             {' '}
-                            <Button color="primary" type="submit" value="submit">
+                            <Button className="submit-button" type="submit" value="submit">
                                 Add Game
                             </Button>
-                            <Button color="secondary" onClick={toggle}>
+                            <Button className="signup-cancel-button" onClick={toggle}>
                                 Cancel
                             </Button>
-                        </ModalFooter>
+                        </FormGroup>
+                       
                     </Form>
                 </ModalBody>
-
             </Modal>
         </div>
     );

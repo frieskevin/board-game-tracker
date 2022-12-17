@@ -8,6 +8,7 @@ import {
     Modal,
     ModalHeader,
     ModalBody,
+    ModalFooter,
     Input,
     Col,
     Label,
@@ -70,7 +71,7 @@ function SignUpModal(args) {
                 Sign Up
             </Button>
             <Modal isOpen={modal} toggle={toggle} {...args}>
-                <ModalHeader toggle={toggle}>Sign Up!</ModalHeader>
+                <ModalHeader className="font" toggle={toggle}>Sign Up!</ModalHeader>
                 <ModalBody className="signup-modal-body">
                     <Form onSubmit={handleFormSubmit}>
                         <Row className="row-cols-lg-auto g-3 align-items-center">
@@ -78,6 +79,7 @@ function SignUpModal(args) {
                                 <div>
                                     <Input
                                         id="signUp-username"
+                                        className="font" 
                                         placeholder="username"
                                         name="username"
                                         type="text"
@@ -94,8 +96,9 @@ function SignUpModal(args) {
                                 </Label>
                                 <Input
                                     id="examplePassword"
+                                    className="font"
                                     name="password"
-                                    placeholder="password!"
+                                    placeholder="password"
                                     type="password"
                                     value={formState.password}
                                     onChange={handleChange}
@@ -109,6 +112,7 @@ function SignUpModal(args) {
                             </Label>
                             <Input
                                 id="exampleEmail"
+                                className="font"
                                 name="email"
                                 placeholder="email"
                                 type="email"
@@ -122,8 +126,12 @@ function SignUpModal(args) {
                         <Button className="signup-cancel-button" color="secondary" onClick={toggle}>
                             Cancel
                         </Button>
-                    </Form>
+                        </Form>
                 </ModalBody>
+                <ModalFooter>
+                     
+                </ModalFooter>
+                 
             </Modal>
         </div>
     );
