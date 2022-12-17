@@ -7,6 +7,7 @@ import Footer from '../src/components/Footer';
 import Home from '../src/pages/Home';
 import Dashboard from '../src/pages/Dashboard';
 import SingleGame from './pages/SingleGame';
+import Profile from '../src/pages/Profile';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -33,16 +34,12 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route 
-          path="/" 
-          element={<Home />} />
-          <Route 
-          path="/dashboard" 
-          element={<Dashboard />} />
-          <Route
             path="/game/:id"
             element={<SingleGame />}
           />
+          <Route path="/profile/:username" element={<Profile />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
         <Footer />
       </Router>
