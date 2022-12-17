@@ -43,11 +43,19 @@ export const QUERY_USER = gql`
         games {
           _id
           title
+          username
           winner
+          score
           gameNotes
+          createdAt
+          comments {
+            commentBody
+            username
+            createdAt
           }
         }
-    }`;
+    }
+}`;
 
 export const QUERY_GAMES = gql`
   query games($username: String!) {
@@ -70,8 +78,8 @@ export const QUERY_GAMES = gql`
 }`;
 
 export const QUERY_GAME = gql`
-    query game($_id: ID) {
-        game(_id: $_id) {
+    query game($id: ID) {
+        game(_id: $id) {
             _id
             title
             username
@@ -80,6 +88,7 @@ export const QUERY_GAME = gql`
             gameNotes
             createdAt
             comments {
+                _id
                 commentBody
                 username
                 createdAt
