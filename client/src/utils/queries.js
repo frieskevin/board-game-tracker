@@ -58,8 +58,8 @@ export const QUERY_USER = gql`
 }`;
 
 export const QUERY_GAMES = gql`
-  query games($username: String!) {
-    games(username: $username) {
+  query games {
+    games {
         _id
         title
         username
