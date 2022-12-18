@@ -10,12 +10,9 @@ import LoginModal from '../components/Modal/LoginModal';
 import GameList from '../components/GameList';
 
 const Home = () => {
-    const loggedIn = Auth.loggedIn();
     const { loading, data } = useQuery(QUERY_GAMES);
     const games = data?.games || [];
     console.log(games, 'games');
-
-
     return (
         <main>
             {Auth.loggedIn() ? (

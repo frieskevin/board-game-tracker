@@ -50,7 +50,8 @@ export const ADD_COMMENT = gql`
     mutation addComment($gameId: ID!, $commentBody: String!) {
         addComment(gameId: $gameId, commentBody: $commentBody) {
             _id
-            gameId
-            commentBody
+            comments {
+                commentBody
+            }
     }
 }`;
