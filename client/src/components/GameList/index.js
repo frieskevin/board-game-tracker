@@ -22,46 +22,46 @@ const GameList = ({ games, title }) => {
       {games &&
         games.map(game => (
           <div key={game.id}>
+            
             <Card
-              style={{
-                width: '18rem'
-              }}>
-              <CardTitle>{game.title}</CardTitle>
-              <p>
-                <CardLink
-                  to={`/profile/${game.username}`}
-                >
-                  {game.username}
-                </CardLink>{' '}
-              </p>
-              <div>
-                <Link to={`/game/${game._id}`}>
-                  <ListGroup flush>
-                    <ListGroupItem>
-                      <CardText>
-                        {game.gameNotes}
-                        </CardText>
-                        </ListGroupItem>
-                    <ListGroupItem>
-                      {game.winner}
-                    </ListGroupItem>
-                    <ListGroupItem>
-                      {game.score}
-                    </ListGroupItem>
-                    <ListGroupItem>
-                      {game.username}
-                    </ListGroupItem>
-                  </ListGroup>
-                  <p className="mb-0">
-                    Comments: {game.commentCount} || Click to{' '}
-                    {game.commentCount ? 'see' : 'start'} the discussion!
-                  </p>
-                </Link>
-              </div>
-            </Card>
-          </div>
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              mb:'3',
+              sm: '8'
+          }}>
+              <CardBody className='card-body'>
+              <CardTitle className='text-center h4'>{game.title}</CardTitle>
+                <p>
+                  <CardLink
+                    className='profile-link'
+                    to={`/profile/${game.username}`}
+                  >
+                    Created By: {game.username}
+                  </CardLink>{' '}
+                </p>
+                <div className='card-main'>
+                  <Link to={`/game/${game._id}`}>
+                    <CardText>
+                      Game Notes: {game.gameNotes}
+                    </CardText>
+                    <CardText>
+                      Winner: {game.winner}
+                    </CardText>
+                    <CardText>
+                      Score: {game.score}
+                    </CardText>
+                    <p className="comments mb-0">
+                      Comments: {game.commentCount} || Click to{' '}
+                      {game.commentCount ? 'see' : 'start'} the discussion!
+                    </p>
+                  </Link>
+                </div>
+              </CardBody>
+            </Card >
+            </div>
         ))}
-    </div>
+    </div >
   );
 };
 

@@ -22,6 +22,41 @@
     height: 5rem;
 }
 
+.card {
+    margin: 10px;
+    display: flex;
+    border: solid 2px #00247c;
+    margin-bottom: 10px;
+}
+.profile-link {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+.card a {
+    text-decoration: none;
+    padding-bottom: 20px;
+}
+.card-title {
+    font-family: Luckiest Guy;
+    background-color: var(--quinary-color);
+    color: var(--quaternary-color);
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+}
+.card-body{
+    background-color: var(--quaternary-color);
+    border-radius: 5px;
+    
+}
+.card-text {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+.comments {
+    color: var(--primary-color);
+    text-align: center;
+}
 .submit-button {
     margin-right: 1rem;
     margin-top: 1rem;
@@ -71,6 +106,7 @@
 }
 
 .footer-div {
+    margin-top: 10px;
     padding-top: 1rem;
     font-family: Luckiest Guy;
 }

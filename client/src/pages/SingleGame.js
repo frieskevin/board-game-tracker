@@ -25,33 +25,32 @@ const SingleGame = (props) => {
         variables: { id: gameId }
     })
     const game = data?.game || {};
-    
+
     if (loading) {
         return <div>Loading...</div>;
     }
-    
+
     console.log(game);
     return (
         <div>
-            <Card
-                style={{
-                    width: '18rem'
-                }}>
+            <Card>
+                <CardTitle tag="h5" className='m-0'>
+                    {game.title}
+                </CardTitle>
                 <CardBody>
-                    <CardTitle tag="h5">
-                        { game.title}
-                    </CardTitle>
-                    <CardText>
-                        { game.gameNotes}
+                    <CardText >
+                        Notes: {game.gameNotes}
                     </CardText>
+                    <div className='card-main'>
+                        <CardText className='text-center'>
+                            Winner: {game.winner}
+                        </CardText>
+                        <CardText className='text-center'>
+                            Score: {game.score}
+                        </CardText>
+                    </div>
                 </CardBody>
                 <ListGroup flush>
-                    <ListGroupItem>
-                        {game.winner}
-                    </ListGroupItem>
-                    <ListGroupItem>
-                        {game.score}
-                    </ListGroupItem>
                     <ListGroupItem>
                         {game.username}
                     </ListGroupItem>
