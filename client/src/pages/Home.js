@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import SignUpModal from '../components/Modal/SignUpModal';
 import LoginModal from '../components/Modal/LoginModal';
 import GameList from '../components/GameList';
+import { Spinner } from 'reactstrap';
 
 const Home = () => {
     const { loading, data } = useQuery(QUERY_GAMES);
@@ -25,7 +26,7 @@ const Home = () => {
             )}
             <div>
                 {loading ? (
-                    <div>Loading...</div>
+                    <Spinner color='primary'>Loading...</Spinner>
                 ) : (
                     <GameList
                         games={games}

@@ -7,7 +7,7 @@
 }
 
 .font {
-    font-family: Luckiest Guy;
+    font-family: Luckiest Guy, 'Arial Black', sans-serif;
 }
 
 body {
@@ -16,8 +16,6 @@ body {
     background-size: cover;
     height: 100vh;
 }
-
-.nav-title
 
 /*modal designs*/
 .addGameModal .modal-body {
@@ -35,13 +33,13 @@ body {
 .card {
     margin: 10px;
     display: flex;
-    border: solid 2px #00247c;
+    border: solid 2px var(--quaternary-color);
     margin-bottom: 10px;
     box-shadow: 5px 5px 10px black;
 }
 
 .card-header {
-    background-color: var(--quinary-color);
+    color: var(--quaternary-color);
 }
 .profile-link {
     text-decoration: none;
@@ -51,8 +49,9 @@ body {
     text-decoration: none;
     padding-bottom: 20px;
 }
+
 .card-title {
-    font-family: Luckiest Guy;
+    font-family: Luckiest Guy, 'Arial Black', sans-serif;
     background-color: var(--quinary-color);
     color: var(--quaternary-color);
     text-align: center;
@@ -70,10 +69,16 @@ body {
     text-decoration: none;
     color: var(--primary-color);
 }
+
 .comments {
     color: var(--primary-color);
     text-align: center;
 }
+.comment-header{
+    font-family: Luckiest Guy, 'Arial Black', sans-serif;
+    color: var(--quaternary-color);
+}
+
 .submit-button {
     margin-right: 1rem;
     margin-top: 1rem;
@@ -116,7 +121,7 @@ div.modal-footer {
 .nav-title {
     color: var(--primary-color);
     text-decoration: none;
-    font-family: Luckiest Guy;
+    font-family: Luckiest Guy, 'Arial Black', sans-serif;
 }
 
 .nav-title h1:hover {
@@ -125,7 +130,7 @@ div.modal-footer {
 
 .nav-link {
     text-decoration: none;
-    font-family: Luckiest Guy;
+    font-family: Luckiest Guy, 'Arial Black', sans-serif;
     color: var(--primary-color);
 }
 
@@ -141,5 +146,5 @@ div.modal-footer {
 .footer-div {
     margin-top: 10px;
     padding-top: 1rem;
-    font-family: Luckiest Guy;
+    font-family: Luckiest Guy, 'Arial Black', sans-serif;
 }
