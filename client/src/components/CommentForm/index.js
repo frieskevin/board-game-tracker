@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { ADD_COMMENT } from '../../utils/mutations'
+import { ADD_COMMENT } from '../../utils/mutations';
+import { Button } from 'reactstrap';
 
 const CommentForm = ({ gameId }) => {
     const [commentBody, setBody] = useState('');
@@ -45,13 +46,13 @@ const CommentForm = ({ gameId }) => {
                 <textarea
                     placeholder="Comment on this game..."
                     value={commentBody}
-                    className="form-input col-12 col-md-9"
+                    className="form-input col-12 col-md-9 m-1"
                     onChange={handleChange}
                 ></textarea>
 
-                <button className="btn col-12 col-md-3" type="submit">
+                <Button className="btn col-10 col-md-2 m-2" type="submit">
                     Submit
-                </button>
+                </Button>
             </form>
 
             {/* {error && <div>Something went wrong...</div>} */}
