@@ -56,6 +56,8 @@ const SingleGame = (props) => {
                         {game.username}
                     </ListGroupItem>
                 </ListGroup>
+                <CommentList comments={game.comments} />
+                {Auth.loggedIn() && <CommentForm gameId={game._id} />}
                 <CardBody>
                 </CardBody>
             </Card>
