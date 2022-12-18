@@ -33,12 +33,8 @@ const SingleGame = (props) => {
     console.log(game);
     return (
         <div>
-            <Card
-                style={{
-                    display: 'flex',
-                    flexDirection: 'column'
-                }}>
-                <CardTitle tag="h5">
+            <Card>
+                <CardTitle tag="h5" className='m-0'>
                     {game.title}
                 </CardTitle>
                 <CardBody>
