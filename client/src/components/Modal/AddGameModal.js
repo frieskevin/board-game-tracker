@@ -67,7 +67,7 @@ function AddGameModal(props) {
 
     return (
         <div>
-            <Button color="danger" onClick={toggle}>
+            <Button color="danger" onClick={toggle} className='lg m-1'>
                 Add Game!
             </Button>
             <Modal isOpen={modal} toggle={toggle} fullscreen>
@@ -144,7 +144,7 @@ function AddGameModal(props) {
                                 id="gameNotes"
                                 className="font"
                                 name="gameNotes"
-                                placeholder="Anything you would like to rememeber for next Game?"
+                                placeholder="Anything you would like to remember for next Game?"
                                 type="textarea"
                                 value={formState.gameNotes}
                                 onChange={handleChange}
@@ -186,7 +186,7 @@ function AddGameModal(props) {
                                 </Col>
                             </Row>
                             {' '}
-                            <Button className="submit-button" type="submit" value="submit">
+                            <Button className="submit-button" type="submit" value="submit" color='dark'>
                                 Add Game
                             </Button>
                             <Button className="signup-cancel-button" onClick={toggle}>

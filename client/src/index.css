@@ -10,8 +10,17 @@
     font-family: Luckiest Guy;
 }
 
+body {
+    background-color: var(--primary-color);
+    background-image: url('./assets/images/background-image.png');
+    background-size: cover;
+    height: 100vh;
+}
+
+.nav-title
+
 /*modal designs*/
-.addGameModal {
+.addGameModal .modal-body {
     background-color:  var(--quaternary-color);
 }
 
@@ -20,6 +29,7 @@
 }
 .game-modal-header {
     height: 5rem;
+    background-color: var(--quinary-color);
 }
 
 .card {
@@ -27,6 +37,11 @@
     display: flex;
     border: solid 2px #00247c;
     margin-bottom: 10px;
+    box-shadow: 5px 5px 10px black;
+}
+
+.card-header {
+    background-color: var(--quinary-color);
 }
 .profile-link {
     text-decoration: none;
@@ -47,7 +62,9 @@
 .card-body{
     background-color: var(--quaternary-color);
     border-radius: 5px;
-    
+}
+.card-body p {
+    color: var(--primary-color)
 }
 .card-text {
     text-decoration: none;
@@ -65,9 +82,21 @@
 .signup-cancel-button {
     margin-top: 1rem;
 }
+.modal-content {
+    box-shadow: 5px 5px 10px black;
+
+}
+.modal-header {
+    color: var(--primary-color);
+    background-color: var(--quaternary-color);
+}
+
+div.modal-footer {
+    background-color: var(--secondary-color);
+} 
 
 .login-modal {
-    background-color: var(--primary-color);
+    background-color: var(--quinary-color);
 }
 
 .login-button {
@@ -88,6 +117,10 @@
     color: var(--primary-color);
     text-decoration: none;
     font-family: Luckiest Guy;
+}
+
+.nav-title h1:hover {
+    color: #888;
 }
 
 .nav-link {

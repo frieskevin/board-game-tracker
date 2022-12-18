@@ -57,7 +57,7 @@ function LoginModal(args) {
 
   return (
     <div>
-      <Button color="danger" onClick={toggle}>
+      <Button color="danger" onClick={toggle} className='m-1'>
         Login
       </Button>
       <Modal isOpen={modal} toggle={toggle} {...args}>
@@ -100,7 +100,7 @@ function LoginModal(args) {
                 />
               </Col>
             </Row>
-            <Button className="login-button font" type='submit' value="submit">
+            <Button className="login-button font" type='submit' value="submit" color='dark'>
               Login
             </Button>
             {error && <div>Login Failed</div>}

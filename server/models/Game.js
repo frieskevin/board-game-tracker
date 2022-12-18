@@ -1,5 +1,6 @@
 const { Schema, model } = require('mongoose');
 const commentSchema = require('./Comment');
+const dateFormat = require('../utils/dateFormat');
 
 const gameSchema = new Schema(
     {
@@ -24,7 +25,8 @@ const gameSchema = new Schema(
         },
         createdAt: {
             type: Date,
-            default: Date.now
+            default: Date.now,
+            get: timestamp => dateFormat(timestamp)
         },
         image: {
             type: String

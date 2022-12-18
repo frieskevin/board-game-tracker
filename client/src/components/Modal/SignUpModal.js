@@ -67,7 +67,7 @@ function SignUpModal(args) {
 
     return (
         <div>
-            <Button color="danger" onClick={toggle}>
+            <Button color="danger" onClick={toggle} className='m-1'>
                 Sign Up
             </Button>
             <Modal isOpen={modal} toggle={toggle} {...args}>
@@ -120,7 +120,7 @@ function SignUpModal(args) {
                                 onChange={handleChange}
                             />
                         </Row>
-                        <Button className="submit-button" type="submit" value="submit">
+                        <Button className="submit-button" type="submit" value="submit" color='dark'>
                             Submit
                         </Button>
                         <Button className="signup-cancel-button" color="secondary" onClick={toggle}>
