@@ -40,17 +40,17 @@ const CommentForm = ({ gameId }) => {
                 {error && <span className="ml-2">Something went wrong...</span>}
             </p>
             <form
-                className="flex-row justify-center justify-space-between-md align-stretch"
+                className="flex-row justify-center justify-space-between-md align-stretch container"
                 onSubmit={handleFormSubmit}
             >
                 <textarea
                     placeholder="Comment on this game..."
                     value={commentBody}
-                    className="form-input col-12 col-md-9 m-1"
+                    className="form-input col-12 col-md-9 mb-0"
                     onChange={handleChange}
                 ></textarea>
 
-                <Button className="btn col-10 col-md-2 m-2" type="submit">
+                <Button className="btn col-12 col-md-3 mt-2 mb-5" type="submit">
                     Submit
                 </Button>
             </form>

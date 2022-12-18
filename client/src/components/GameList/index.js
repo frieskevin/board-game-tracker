@@ -36,23 +36,23 @@ const GameList = ({ games, title }) => {
                   <CardLink
                     className='profile-link'
                     to={`/profile/${game.username}`}
-                  >
-                    Created By: {game.username}
+                  ><span className='font'>Created By: </span>
+                    {game.username}
                   </CardLink>{' '}
                 </p>
                 <div className='card-main'>
                   <Link to={`/game/${game._id}`}>
-                    <CardText>
-                      Game Notes: {game.gameNotes}
+                    <CardText><span className='font'>
+                      Game Notes: </span>{game.gameNotes}
                     </CardText>
-                    <CardText>
-                      Winner: {game.winner}
+                    <CardText><span className='font'>
+                      Winner: </span>{game.winner}
                     </CardText>
-                    <CardText>
-                      Score: {game.score}
+                    <CardText><span className='font'>
+                      Score: </span>{game.score}
                     </CardText>
-                    <p className="comments mb-0">
-                      Comments: {game.commentCount} || Click to{' '}
+                    <p className="comments mb-0"><span className='font'>
+                      Comments: </span>{game.commentCount} || Click to{' '}
                       {game.commentCount ? 'see' : 'start'} the discussion!
                     </p>
                   </Link>

@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 const CommentList = ({ comments }) => {
   return (
-    <div className="card mb-3">
+    <div className="comment card mb-3">
       <div className="card-header">
-        <span className="text-light">Comments</span>
+        <span className="comment-header">Comments</span>
       </div>
       <div className="card-body">
         {comments &&

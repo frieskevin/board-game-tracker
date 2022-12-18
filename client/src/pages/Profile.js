@@ -4,6 +4,7 @@ import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../utils/queries';
 import GameList from '../components/GameList';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Spinner } from 'reactstrap';
 
 const Profile = () => {
     const { username: userParam } = useParams();
@@ -13,7 +14,7 @@ const Profile = () => {
         <main>
             <div>
                 {loading ? (
-                    <div>Loading...</div>
+                    <Spinner color='primary'>Loading...</Spinner>
                 ) : (
                     <div>
                         <h3>{user.username}'s Games</h3>

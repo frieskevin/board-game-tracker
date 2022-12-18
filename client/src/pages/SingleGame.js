@@ -10,6 +10,7 @@ import {
     CardLink,
     Card,
     CardBody,
+    Spinner
 } from 'reactstrap';
 
 import CommentList from '../components/CommentList';
@@ -27,7 +28,7 @@ const SingleGame = (props) => {
     const game = data?.game || {};
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <Spinner color='primary'>Loading...</Spinner>;
     }
 
     console.log(game);
@@ -38,15 +39,15 @@ const SingleGame = (props) => {
                     {game.title}
                 </CardTitle>
                 <CardBody>
-                    <CardText >
-                        Notes: {game.gameNotes}
+                    <CardText ><span className='font'>Notes: </span>
+                         {game.gameNotes}
                     </CardText>
                     <div className='card-main'>
-                        <CardText className='text-center'>
-                            Winner: {game.winner}
+                        <CardText className='text-center'><span className='font'>
+                            Winner: </span>{game.winner}
                         </CardText>
-                        <CardText className='text-center'>
-                            Score: {game.score}
+                        <CardText className='text-center'><span className='font'>
+                            Score: </span>{game.score}
                         </CardText>
                     </div>
                 </CardBody>

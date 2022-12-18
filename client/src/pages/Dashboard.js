@@ -6,6 +6,7 @@ import GameList from '../components/GameList';
 import Auth from '../utils/auth';
 import AddGameModal from '../components/Modal/AddGameModal';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Spinner } from 'reactstrap';
 
 const Dashboard = () => {
     const { username: userParam } = useParams();
@@ -23,7 +24,7 @@ const Dashboard = () => {
             </div>
             <div className={`${loggedIn && ''}`}>
                 {loading ? (
-                    <div>Loading...</div>
+                    <Spinner color='primary'>Loading...</Spinner>
                 ) : (
                     <GameList
                         games={me.games}
