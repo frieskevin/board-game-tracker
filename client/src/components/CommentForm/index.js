@@ -54,7 +54,7 @@ const CommentForm = ({ gameId }) => {
                 </button>
             </form>
 
-            {error && <div>Something went wrong...</div>}
+            {/* {error && <div>Something went wrong...</div>} */}
         </div>
     );
 };

@@ -50,6 +50,15 @@ const SingleGame = (props) => {
                         </CardText>
                     </div>
                 </CardBody>
+                <ListGroup flush>
+                    <ListGroupItem>
+                        {game.username}
+                    </ListGroupItem>
+                </ListGroup>
+                <CommentList comments={game.comments} />
+                {Auth.loggedIn() && <CommentForm gameId={game._id} />}
+                <CardBody>
+                </CardBody>
             </Card>
             {Auth.loggedIn()}
         </div>
