@@ -14,7 +14,11 @@ body {
     background-color: var(--primary-color);
     background-image: url('./assets/images/background-image.png');
     background-size: cover;
-    height: 100vh;
+    height: 100vh; 
+}
+
+main {
+    padding-bottom: 4rem;
 }
 
 /*modal designs*/
@@ -141,6 +145,9 @@ div.modal-footer {
 #main-footer {
     background-color: var(--secondary-color);
     height: 4rem;
+    bottom: 0;
+    position: fixed;
+    width: 100vw;
 }
 
 .footer-div {
