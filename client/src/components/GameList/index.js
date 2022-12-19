@@ -33,12 +33,12 @@ const GameList = ({ games, title }) => {
               <CardBody className='card-body'>
               <CardTitle className='text-center h4'>{game.title}</CardTitle>
                 <p>
-                  <CardLink
+                  <Link
                     className='profile-link'
                     to={`/profile/${game.username}`}
                   ><span className='font'>Created By: </span>
                     {game.username}
-                  </CardLink>{' '}
+                  </Link>{' '}
                 </p>
                 <div className='card-main'>
                   <Link to={`/game/${game._id}`}>
