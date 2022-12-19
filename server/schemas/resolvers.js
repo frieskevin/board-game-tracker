@@ -17,20 +17,20 @@ const resolvers = {
             throw new AuthenticationError('Not logged in');
         },
         users: async () => {
-            return User.find()
+            return await User.find()
                 .select('-__v -password')
                 .populate('games')
         },
         user: async (parent, { username }) => {
-            return User.findOne({ username })
+            return await User.findOne({ username })
                 .select('-__v -password')
                 .populate('games')
         },
         games: async () => {
-            return Game.find();
+            return await Game.find();
         },
         game: async (parent, { _id }) => {
-            return Game.findOne({ _id });
+            return await Game.findOne({ _id });
         }
     },
 
