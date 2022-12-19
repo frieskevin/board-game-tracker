@@ -1,12 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Button,
   CardTitle,
   CardText,
-  ListGroupItem,
-  ListGroup,
-  CardLink,
   Card,
   CardBody,
 } from 'reactstrap';
