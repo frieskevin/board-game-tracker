@@ -118,7 +118,7 @@ div.modal-footer {
     background-color: var(--quinary-color);
 }
 
-.nav-title {
+.nav-title h1 {
     color: var(--primary-color);
     text-decoration: none;
     font-family: Luckiest Guy, 'Arial Black', sans-serif;

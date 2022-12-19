@@ -10,6 +10,8 @@ import {
   NavItem,
   NavLink,
 } from 'reactstrap';
+import LoginModal from '../Modal/LoginModal';
+import SignUpModal from '../Modal/SignUpModal';
 
 function Header(args) {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,34 +23,33 @@ function Header(args) {
   };
 
   return (
+      <div >
     <Navbar {...args} className="nav-background">
-    <NavbarBrand>
-        <Link to="/" className="nav-title">
+    <NavbarBrand href="/" className="nav-title">
           <h1>GITINIT TO WIN IT</h1>
-        </Link>
     </NavbarBrand>
     <NavbarToggler onClick={toggle} />
     <Collapse isOpen={isOpen} navbar>
       <Nav className="me-auto" navbar>
-      <div >
-        <nav >
+
           {Auth.loggedIn() ? (
             <>
             <NavItem>
-              <NavLink><Link to="/Dashboard" className="nav-link">Dashboard</Link></NavLink>
+              <NavLink href="/Dashboard" className="nav-link">Dashboard</NavLink>
             </NavItem>
-              <a href="/" className="nav-link" onClick={logout}>Logout</a>
+              <NavLink href="/" className="nav-link" onClick={logout}>Logout</NavLink>
             </>
           ) : (
             <>
-              <Link to="/"></Link>
+              <LoginModal />
+              <SignUpModal />
             </>
           )}
-        </nav>
-      </div>
+
       </Nav>
         </Collapse>
       </Navbar>
+      </div>
   );
 };
 
