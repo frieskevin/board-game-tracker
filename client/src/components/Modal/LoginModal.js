@@ -63,7 +63,7 @@ function LoginModal(args) {
       <Modal isOpen={modal} toggle={toggle} {...args}>
         <ModalHeader className="font" toggle={toggle}>Login!</ModalHeader>
         <ModalBody className="login-modal">
-          <Form  onSubmit={handleFormSubmit}>
+          <Form onSubmit={handleFormSubmit}>
             <Row className="row-cols-lg-auto g-3 align-items-center">
               <Col>
                 <Label
@@ -107,13 +107,13 @@ function LoginModal(args) {
             <Button className="login-cancel-button font" color="secondary" onClick={toggle}>
               Cancel
             </Button>
-            </Form>
-            </ModalBody>
-            <ModalFooter>
-           
-          </ModalFooter>
-          
-          
+          </Form>
+        </ModalBody>
+        <ModalFooter>
+
+        </ModalFooter>
+
+
       </Modal>
     </div>
   );
