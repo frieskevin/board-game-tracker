@@ -21,9 +21,9 @@ const GameList = ({ games, title }) => {
     <div>
       {games &&
         games.map(game => (
-          <div key={game.id}>
-            
+          // <div >
             <Card
+            key={game._id}
             style={{
               display: 'flex',
               flexDirection: 'row',
@@ -59,7 +59,7 @@ const GameList = ({ games, title }) => {
                 </div>
               </CardBody>
             </Card >
-            </div>
+            // </div>
         ))}
     </div >
   );

@@ -16,14 +16,6 @@ const Home = () => {
     console.log(games, 'games');
     return (
         <main>
-            {Auth.loggedIn() ? (
-                <></>
-            ) : (
-                <>
-                    <SignUpModal />
-                    <LoginModal />
-                </>
-            )}
             <div>
                 {loading ? (
                     <Spinner color='primary'>Loading...</Spinner>
