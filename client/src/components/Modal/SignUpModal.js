@@ -58,8 +58,8 @@ function SignUpModal(args) {
             username: ''
         });
         const loggedIn = Auth.loggedIn();
-        if(loggedIn) {
-        <Navigate to="/dashboard" />
+        if (loggedIn) {
+            <Navigate to="/dashboard" />
         };
 
     };
@@ -79,7 +79,7 @@ function SignUpModal(args) {
                                 <div>
                                     <Input
                                         id="signUp-username"
-                                        className="font" 
+                                        className="font"
                                         placeholder="username"
                                         name="username"
                                         type="text"
@@ -126,12 +126,12 @@ function SignUpModal(args) {
                         <Button className="signup-cancel-button" color="secondary" onClick={toggle}>
                             Cancel
                         </Button>
-                        </Form>
+                    </Form>
                 </ModalBody>
                 <ModalFooter>
-                     
+
                 </ModalFooter>
-                 
+
             </Modal>
         </div>
     );
