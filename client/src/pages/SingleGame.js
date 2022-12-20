@@ -42,6 +42,9 @@ const SingleGame = (props) => {
                     <CardText ><span className='font'>Notes: </span>
                         {game.gameNotes}
                     </CardText>
+                    <CardText className='text-center'><span className='font'>
+                        Players: </span>{game.players}
+                    </CardText>
                     <div className='card-main'>
                         <CardText className='text-center'><span className='font'>
                             Winner: </span>{game.winner}

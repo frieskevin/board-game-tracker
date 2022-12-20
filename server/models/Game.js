@@ -34,9 +34,8 @@ const gameSchema = new Schema(
         link: {
             type: String
         },
-        characters: {
+        players: {
             type: String,
-            maxLength: 400
         },
         comments: [commentSchema]
     },

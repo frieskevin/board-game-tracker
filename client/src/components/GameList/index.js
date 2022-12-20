@@ -8,7 +8,7 @@ import {
 } from 'reactstrap';
 
 
-const GameList = ({ games, title }) => {
+const GameList = ({ games }) => {
   if (!games.length) {
     return <h3>No games yet</h3>
   }
@@ -38,13 +38,10 @@ const GameList = ({ games, title }) => {
               <div className='card-main'>
                 <Link to={`/game/${game._id}`}>
                   <CardText><span className='font'>
-                    Game Notes: </span>{game.gameNotes}
+                    Players: </span>{game.players}
                   </CardText>
                   <CardText><span className='font'>
                     Winner: </span>{game.winner}
-                  </CardText>
-                  <CardText><span className='font'>
-                    Score: </span>{game.score}
                   </CardText>
                   <p className="comments mb-0"><span className='font'>
                     Comments: </span>{game.commentCount} || Click to{' '}
