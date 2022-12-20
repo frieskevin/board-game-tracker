@@ -24,13 +24,14 @@ mutation addUser($username: String!, $email: String!, $password: String!) {
   }`;
 
 export const ADD_GAME = gql`
-mutation AddGame($title: String!, $username: String!, $winner: String, $score: String, $gameNotes: String) {
-    addGame(title: $title, username: $username, winner: $winner, score: $score, gameNotes: $gameNotes) {
+mutation AddGame($title: String!, $username: String!, $winner: String, $score: String, $players: String, $gameNotes: String) {
+    addGame(title: $title, username: $username, winner: $winner, score: $score, players: $players, gameNotes: $gameNotes) {
         _id
         username  
         title 
         winner
         score
+        players
         gameNotes
         image
         link

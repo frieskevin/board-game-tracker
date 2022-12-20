@@ -37,14 +37,11 @@ const GameList = ({ games, title }) => {
               </p>
               <div className='card-main'>
                 <Link to={`/game/${game._id}`}>
-                  <CardText><span className='font'>
-                    Game Notes: </span>{game.gameNotes}
+                  <CardText className='text-center'><span className='font'>
+                    Players: </span>{game.players}
                   </CardText>
                   <CardText><span className='font'>
                     Winner: </span>{game.winner}
-                  </CardText>
-                  <CardText><span className='font'>
-                    Score: </span>{game.score}
                   </CardText>
                   <p className="comments mb-0"><span className='font'>
                     Comments: </span>{game.commentCount} || Click to{' '}

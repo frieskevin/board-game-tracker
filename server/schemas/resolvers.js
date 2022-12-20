@@ -27,7 +27,7 @@ const resolvers = {
                 .populate('games')
         },
         games: async () => {
-            return await Game.find();
+            return await Game.find().sort({ createdAt: -1 });
         },
         game: async (parent, { _id }) => {
             return await Game.findOne({ _id });
