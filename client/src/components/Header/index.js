@@ -26,7 +26,6 @@ function Header(args) {
 
   window.addEventListener('beforeinstallprompt', (event) => {
     event.preventDefault();
-    installBtn.style.visibility = 'visible';
 
     installBtn.addEventListener('click', () => {
       event.prompt();
