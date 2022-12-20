@@ -39,16 +39,24 @@ height: 15rem;
 }
 
 /*modal designs*/
-.addGameModal .modal-body {
-    background-color:  var(--quaternary-color);
+.addGameModal {
+    background-color:  #b1bcc0;
 }
 
 .game-label {
-    color: var(--primary-color);
+    color: var(--quaternary-color);
 }
 .game-modal-header {
     height: 5rem;
     background-color: var(--quinary-color);
+}
+
+.pill a {
+    color: #b1bcc0;
+}
+
+.pill a:hover {
+    color: #888;
 }
 
 .add-game-button {
@@ -70,12 +78,31 @@ height: 15rem;
     box-shadow: 5px 5px 10px black;
 }
 
-.card-header {
-    color: var(--quaternary-color);
+div.card {
+    background-color: #b1bcc0;
 }
+
+div.card-header {
+    background-color: var(--quinary-color);
+}
+
+.card-body {
+    background-color: var(--quaternary-color);
+    border-radius: 5px;
+}
+.card-body p {
+    color: var(--primary-color)
+}
+
 .profile-link {
     text-decoration: none;
     color: var(--primary-color);
+}
+
+li.list-group-item {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-family: Luckiest Guy, 'Arial Black', sans-serif;
 }
 .card a {
     text-decoration: none;
@@ -90,13 +117,7 @@ height: 15rem;
     padding: 5px;
     border-radius: 5px;
 }
-.card-body{
-    background-color: var(--quaternary-color);
-    border-radius: 5px;
-}
-.card-body p {
-    color: var(--primary-color)
-}
+
 .card-text {
     text-decoration: none;
     color: var(--primary-color);
@@ -109,6 +130,10 @@ height: 15rem;
 .comment-header{
     font-family: Luckiest Guy, 'Arial Black', sans-serif;
     color: var(--quaternary-color);
+}
+
+.form-input {
+    border-radius: 5px;
 }
 
 .submit-button {

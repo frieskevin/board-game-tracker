@@ -39,9 +39,6 @@ const SingleGame = (props) => {
                     {game.title}
                 </CardTitle>
                 <CardBody>
-                    <CardText ><span className='font'>Notes: </span>
-                        {game.gameNotes}
-                    </CardText>
                     <CardText className='text-center'><span className='font'>
                         Players: </span>{game.players}
                     </CardText>
@@ -52,6 +49,9 @@ const SingleGame = (props) => {
                         <CardText className='text-center'><span className='font'>
                             Score: </span>{game.score}
                         </CardText>
+                    <CardText ><span className='font'>Notes: </span>
+                        {game.gameNotes}
+                    </CardText>
                     </div>
                 </CardBody>
                 <ListGroup flush>
