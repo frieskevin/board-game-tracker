@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../../index.css";
 import { useMutation } from '@apollo/client';
 import { ADD_GAME} from '../../utils/mutations';
-import { QUERY_GAMES, QUERY_ME } from '../../utils/queries';
+
 import {
     Button,
     Modal,
@@ -31,20 +31,7 @@ function AddGameModal(props) {
         image: '',
     });
 
-    const [addGame, { error }] = useMutation(ADD_GAME, {
-    //     update(cache, { data: { Game } }) {
-    //         try {
-    //             const { me } = cache.readQuery({ query: QUERY_ME })
-    //         } catch (e) {
-    //             console.warn(" This is a warning")
-    //         }
-    //         const { games } = cache.readQuery({ query: QUERY_GAMES });
-    //   cache.writeQuery({
-    //     query: QUERY_GAMES,
-    //     data: { games: [addGame, ...games] },
-    //   });
-    //     }
-    })
+    const [addGame, { error }] = useMutation(ADD_GAME);
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -56,7 +43,7 @@ function AddGameModal(props) {
     };
 
     const handleFormSubmit = async (event) => {
-        event.preventDefault();
+        
 
         try {
             await addGame({
