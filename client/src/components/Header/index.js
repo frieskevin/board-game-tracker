@@ -49,7 +49,12 @@ function Header(args) {
           </Nav>
         </Collapse>
       </Navbar>
-    </div>
+      <div className="background-image">
+        <div className="opening-text font">
+            Keep track of board game scores with your friends!
+        </div>
+      </div>
+      </div>
   );
 };
 

@@ -67,9 +67,11 @@ function AddGameModal(props) {
 
     return (
         <div>
-            <Button color="danger" onClick={toggle} className='lg m-1'>
+            <div className="button-div font" >
+            <Button color="danger" onClick={toggle} className='lg m-1 add-game-button font'>
                 Add Game!
             </Button>
+            </div>
             <Modal isOpen={modal} toggle={toggle} fullscreen>
                 <ModalHeader size="lg" className="font game-modal-header" toggle={toggle}>Add Game!</ModalHeader>
                 <ModalBody className="addGameModal">
@@ -186,7 +188,7 @@ function AddGameModal(props) {
                                 </Col>
                             </Row>
                             {' '}
-                            <Button className="submit-button" type="submit" value="submit" color='dark'>
+                            <Button onClick={toggle} className="submit-button" type="submit" value="submit" color='dark'>
                                 Add Game
                             </Button>
                             <Button className="signup-cancel-button" onClick={toggle}>
