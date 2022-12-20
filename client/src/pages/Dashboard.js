@@ -10,7 +10,7 @@ import { Spinner } from 'reactstrap';
 
 const Dashboard = () => {
     const { username: userParam } = useParams();
-    const { loading, data } = useQuery(QUERY_ME, { variables: { username: userParam}});
+    const { loading, data } = useQuery(QUERY_ME, { variables: { username: userParam } });
     const loggedIn = Auth.loggedIn();
     const me = data?.me || [];
     console.log(me);
@@ -19,7 +19,7 @@ const Dashboard = () => {
         <main>
             <div className=''>
                 {loggedIn && (
-                     <AddGameModal /> 
+                    <AddGameModal />
                 )}
             </div>
             <div className={`${loggedIn && ''}`}>

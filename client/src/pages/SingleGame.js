@@ -40,7 +40,7 @@ const SingleGame = (props) => {
                 </CardTitle>
                 <CardBody>
                     <CardText ><span className='font'>Notes: </span>
-                         {game.gameNotes}
+                        {game.gameNotes}
                     </CardText>
                     <div className='card-main'>
                         <CardText className='text-center'><span className='font'>

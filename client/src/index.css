@@ -1,25 +1,34 @@
 :root {
-    --primary-color: #b1bcc0;
-    --secondary-color: #15cd64;
-    --tertiary-color: #ad0002;
-    --quaternary-color: #00247c;
-    --quinary-color: #c6b12c;
+    --primary-color: #f8f4f9;
+    --secondary-color: #419d78;
+    --tertiary-color: #cc2936;
+    --quaternary-color: #3066be;
+    --quinary-color: #F7F052;
 }
 
 .font {
     font-family: Luckiest Guy, 'Arial Black', sans-serif;
 }
 
-body {
-    background-color: var(--primary-color);
-    background-image: url('./assets/images/background-image.png');
-    background-size: cover;
-    height: 100vh; 
+main {
+  background-color: #b1bcc0;
+  padding-bottom: 4rem;
+  padding-top: 2rem;
+  margin-top: 0rem;
 }
 
-main {
-    padding-bottom: 4rem;
+div.background-image {
+background-image: url(../src/assets/images/tryagain.png);
+background-repeat: no-repeat;
+background-size: cover;
+height: 15rem;
 }
+
+.opening-text {
+    color: var(--primary-color)
+}
+
+
 
 /*modal designs*/
 .addGameModal .modal-body {
@@ -32,6 +41,17 @@ main {
 .game-modal-header {
     height: 5rem;
     background-color: var(--quinary-color);
+}
+
+.add-game-button {
+    height: 4rem;
+    width: 50%;
+    margin-top: 1rem;
+}
+
+.button-div {
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
 .card {
@@ -100,10 +120,6 @@ main {
     background-color: var(--quaternary-color);
 }
 
-div.modal-footer {
-    background-color: var(--secondary-color);
-} 
-
 .login-modal {
     background-color: var(--quinary-color);
 }
@@ -112,6 +128,10 @@ div.modal-footer {
     margin-right: 1rem;
     margin-top: 1rem;
     background-color: #00247c;
+}
+
+div.modal-footer {
+    background-color: var(--quinary-color)
 }
 
 .login-cancel-button {
