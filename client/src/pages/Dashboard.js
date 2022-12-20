@@ -13,7 +13,10 @@ const Dashboard = () => {
     const { loading, data } = useQuery(QUERY_ME, { variables: { username: userParam } });
     const loggedIn = Auth.loggedIn();
     const me = data?.me || [];
+    
     console.log(me);
+
+  
 
     return (
         <main>

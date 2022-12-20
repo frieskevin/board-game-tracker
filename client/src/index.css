@@ -6,6 +6,10 @@
     --quinary-color: #F7F052;
 }
 
+#root {
+    background-color: #b1bcc0;
+}
+
 .font {
     font-family: Luckiest Guy, 'Arial Black', sans-serif;
 }

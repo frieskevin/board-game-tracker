@@ -73,13 +73,17 @@ const resolvers = {
         },
         deleteGame: async (parent, args, context) => {
             if(context.user) {
-                const updatedGame = await Game.create({ ...args, username: context.user.username });
-                await User.findByIdAndUpdate(
+                const updateUser = await User.findOneAndUpdate(
                     { _id: context.user._id },
-                    { $pull: { games: game._id } },
+                    { $pull: { games: args._id }},
                     { new: true }
                 );
-                return updatedGame;
+                console.log(updateUser, "did this work");
+                console.log(args);
+                const removeGame = await Game.deleteOne(
+                    { _id: args._id}
+                )
+                return updateUser;
             }
             throw new AuthenticationError("You need to be logged in!");
         },
@@ -90,7 +94,6 @@ const resolvers = {
                     { $push: { comments: { commentBody, username: context.user.username } } },
                     { new: true, runValidators: true }
                 );
-                console.log(comment, "resolvers line 92");
                 return comment;
             }
             throw new AuthenticationError("You need to be logged in!");
