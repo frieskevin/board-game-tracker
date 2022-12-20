@@ -6,6 +6,24 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+const installBtn = document.getElementById('installBtn');
+
+window.addEventListener('beforeinstallprompt', (event) => {
+  event.preventDefault();
+  installBtn.style.visibility = 'visible';
+
+  installBtn.addEventListener('click', () => {
+    event.prompt();
+    installBtn.setAttribute('disabled', true);
+    installBtn.textContent = 'Installed!';
+  });
+});
+
+window.addEventListener('appinstalled', (event) => {
+  console.log('👍', 'appinstalled', event);
+});
+
 root.render(
     <App />
 );

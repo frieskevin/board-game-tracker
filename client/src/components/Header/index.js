@@ -45,16 +45,16 @@ function Header(args) {
                 <SignUpModal />
               </>
             )}
-
+            <button id="installBtn" className="btn btn-light" height="48px">INSTALL</button>
           </Nav>
         </Collapse>
       </Navbar>
       <div className="background-image">
         <div className="opening-text font">
-            Keep track of board game scores with your friends!
+          Keep track of board game scores with your friends!
         </div>
       </div>
-      </div>
+    </div>
   );
 };
 
