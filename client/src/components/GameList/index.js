@@ -8,7 +8,7 @@ import {
 } from 'reactstrap';
 
 
-const GameList = ({ games, title }) => {
+const GameList = ({ games }) => {
   if (!games.length) {
     return <h3>No games yet</h3>
   }
@@ -37,7 +37,7 @@ const GameList = ({ games, title }) => {
               </p>
               <div className='card-main'>
                 <Link to={`/game/${game._id}`}>
-                  <CardText className='text-center'><span className='font'>
+                  <CardText><span className='font'>
                     Players: </span>{game.players}
                   </CardText>
                   <CardText><span className='font'>

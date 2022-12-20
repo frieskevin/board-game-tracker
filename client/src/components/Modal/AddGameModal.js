@@ -103,12 +103,12 @@ function AddGameModal(props) {
                                         Players
                                     </Label>
                                     <Input
-                                        id="username"
+                                        id="players"
                                         className="font"
-                                        name="username"
+                                        name="players"
                                         placeholder="Add the Players Here"
                                         type="text"
-                                        value={formState.username}
+                                        value={formState.players}
                                         onChange={handleChange}
                                     />
                                 </FormGroup>

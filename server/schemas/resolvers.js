@@ -26,8 +26,9 @@ const resolvers = {
                 .select('-__v -password')
                 .populate('games')
         },
-        games: async () => {
-            return await Game.find().sort({ createdAt: -1 });
+        games: async (parent, { username }) => {
+            const params = username ? { username } : {};
+            return await Game.find(params).sort({ createdAt: -1 });
         },
         game: async (parent, { _id }) => {
             return await Game.findOne({ _id });
