@@ -4,6 +4,8 @@ import { LOGIN } from '../../utils/mutations';
 import Auth from '../../utils/auth';
 import {
   Button,
+  NavLink,
+  NavItem,
   Modal,
   ModalHeader,
   ModalBody,
@@ -57,9 +59,12 @@ function LoginModal(args) {
 
   return (
     <div>
-      <Button color="danger" onClick={toggle} className='m-1'>
-        Login
-      </Button>
+      <NavItem>
+        <NavLink onClick={toggle} className='login'>
+        <span className='font'>Login</span>
+      </NavLink>
+      </NavItem>
+      
       <Modal isOpen={modal} toggle={toggle} {...args}>
         <ModalHeader className="font" toggle={toggle}>Login!</ModalHeader>
         <ModalBody className="login-modal">

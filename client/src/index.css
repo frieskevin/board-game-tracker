@@ -8,6 +8,8 @@
 
 #root {
     background-color: #b1bcc0;
+    padding-bottom: 6rem;
+
 }
 
 .font {
@@ -32,7 +34,9 @@ height: 15rem;
     color: var(--primary-color)
 }
 
-
+.login:hover {
+    cursor: pointer;
+}
 
 /*modal designs*/
 .addGameModal .modal-body {

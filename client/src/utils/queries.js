@@ -12,6 +12,7 @@ export const QUERY_ME = gql`
         username
         winner
         score
+        players
         gameNotes
         createdAt
         comments {
@@ -46,6 +47,7 @@ export const QUERY_USER = gql`
           username
           winner
           score
+          players
           gameNotes
           createdAt
           comments {
@@ -65,8 +67,10 @@ export const QUERY_GAMES = gql`
         username
         winner
         score
+        players
         gameNotes
         createdAt
+        commentCount
         comments {
             commentBody
             username
@@ -85,8 +89,10 @@ export const QUERY_GAME = gql`
             username
             winner
             score
+            players
             gameNotes
             createdAt
+            commentCount
             comments {
                 _id
                 commentBody
