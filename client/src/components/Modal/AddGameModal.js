@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../index.css";
 import { useMutation } from '@apollo/client';
-import { ADD_GAME } from '../../utils/mutations';
+import { ADD_GAME} from '../../utils/mutations';
+
 import {
     Button,
     Modal,
@@ -42,7 +43,7 @@ function AddGameModal(props) {
     };
 
     const handleFormSubmit = async (event) => {
-        event.preventDefault();
+        
 
         try {
             await addGame({
@@ -63,6 +64,7 @@ function AddGameModal(props) {
             link: '',
             image: '',
         });
+
     };
 
     return (
