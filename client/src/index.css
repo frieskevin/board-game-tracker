@@ -218,3 +218,10 @@ div.modal-footer {
     padding-top: 1rem;
     font-family: Luckiest Guy, 'Arial Black', sans-serif;
 }
+
+/* media query */
+@media screen and (max-width: 576px) {
+    div.background-image {
+        height: 10rem;
+    }
+}

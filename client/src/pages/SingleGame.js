@@ -39,20 +39,26 @@ const SingleGame = (props) => {
                     {game.title}
                 </CardTitle>
                 <CardBody>
-                    <CardText className='text-center'><span className='font'>
-                        Players: </span>{game.players}
+                    <CardText className='text-center'>
+                        <span className='font'>Created On: </span>
+                        {game.createdAt}
                     </CardText>
-                    <div className='card-main'>
-                        <CardText className='text-center'><span className='font'>
-                            Winner: </span>{game.winner}
-                        </CardText>
-                        <CardText className='text-center'><span className='font'>
-                            Score: </span>{game.score}
-                        </CardText>
-                    <CardText ><span className='font'>Notes: </span>
+                    <CardText className='text-center'>
+                        <span className='font'>Players: </span>
+                        {game.players}
+                    </CardText>
+                    <CardText className='text-center'>
+                        <span className='font'>Winner: </span>
+                        {game.winner}
+                    </CardText>
+                    <CardText className='text-center'>
+                        <span className='font'>Score: </span>
+                        {game.score}
+                    </CardText>
+                    <CardText className='text-center'>
+                        <span className='font'>Notes: </span>
                         {game.gameNotes}
                     </CardText>
-                    </div>
                 </CardBody>
                 <ListGroup flush>
                     <ListGroupItem>
