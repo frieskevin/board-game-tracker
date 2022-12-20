@@ -9,6 +9,7 @@ import {
     ModalHeader,
     ModalBody,
     ModalFooter,
+    NavLink,
     Input,
     Col,
     Label,
@@ -67,9 +68,9 @@ function SignUpModal(args) {
 
     return (
         <div>
-            <Button color="danger" onClick={toggle} className='m-1'>
-                Sign Up
-            </Button>
+            <NavLink onClick={toggle} className='login'>
+                <span className='font'>Sign Up</span>
+            </NavLink>
             <Modal isOpen={modal} toggle={toggle} {...args}>
                 <ModalHeader className="font" toggle={toggle}>Sign Up!</ModalHeader>
                 <ModalBody className="signup-modal-body">

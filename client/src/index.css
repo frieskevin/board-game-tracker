@@ -6,6 +6,11 @@
     --quinary-color: #F7F052;
 }
 
+#root {
+    background-color: #b1bcc0;
+    padding-bottom: 6rem;
+}
+
 .font {
     font-family: Luckiest Guy, 'Arial Black', sans-serif;
 }
@@ -28,7 +33,9 @@ height: 15rem;
     color: var(--primary-color)
 }
 
-
+.login:hover {
+    cursor: pointer;
+}
 
 /*modal designs*/
 .addGameModal .modal-body {
