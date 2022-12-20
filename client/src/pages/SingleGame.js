@@ -34,7 +34,7 @@ const SingleGame = (props) => {
     console.log(game);
     return (
         <div>
-            <Card>
+            <Card className='single-game'>
                 <CardTitle tag="h5" className='m-0'>
                     {game.title}
                 </CardTitle>

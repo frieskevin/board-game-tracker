@@ -3,8 +3,9 @@ import { useMutation } from '@apollo/client';
 import { DELETE_GAME } from '../../utils/mutations';
 import Auth from '../../utils/auth';
 
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import {
+  Button,
   CardTitle,
   CardText,
   Card,
@@ -16,6 +17,8 @@ import {
 const GameList = ({ games, title }) => {
   const [deleteGame] = useMutation(DELETE_GAME);
   const token = Auth.loggedIn() ? Auth.getToken() : null;
+  const location = useLocation();
+  
  
   if (!games.length) {
     return <h3>No games yet</h3>
@@ -43,7 +46,7 @@ const GameList = ({ games, title }) => {
   return (
     <div>
       {games &&
-        games.map(game => (
+        games?.map(game => (
           <Card
             key={game._id}
             style={{
@@ -75,9 +78,10 @@ const GameList = ({ games, title }) => {
                     {game.commentCount ? 'see' : 'start'} the discussion!
                   </p>
                 </Link>
-                <button onClick={() => handleDeleteGame(game._id)} type="button">
-                  Delete Game
-                </button>
+                {Auth.loggedIn() && location.pathname === '/Dashboard' &&
+                <Button onClick={() => handleDeleteGame(game._id)} type="button" color='danger' id='deleteBtn'>
+                  <span className='font'>X</span>
+                </Button>}
               </div>
             </CardBody>
           </Card >
