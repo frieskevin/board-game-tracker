@@ -8,8 +8,9 @@
 
 #root {
     background-color: #b1bcc0;
-    padding-bottom: 6rem;
-
+    padding-bottom: 4rem;
+    min-height: 100vh;
+    height: 100%;
 }
 
 .font {
@@ -21,6 +22,7 @@ main {
   padding-bottom: 4rem;
   padding-top: 2rem;
   margin-top: 0rem;
+  height: 100%;
 }
 
 div.background-image {
@@ -78,6 +80,10 @@ height: 15rem;
     box-shadow: 5px 5px 10px black;
 }
 
+.single-game {
+    margin-bottom: 4rem;
+}
+
 div.card {
     background-color: #b1bcc0;
 }
@@ -97,6 +103,10 @@ div.card-header {
 .profile-link {
     text-decoration: none;
     color: var(--primary-color);
+}
+
+.profile-link:hover {
+    color: #888;
 }
 
 li.list-group-item {
