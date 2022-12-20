@@ -35,7 +35,7 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/game/:id"element={<SingleGame />} />
+          <Route path="/game/:id" element={<SingleGame />} />
           <Route path="/profile/:username" element={<Profile />} />
           <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />

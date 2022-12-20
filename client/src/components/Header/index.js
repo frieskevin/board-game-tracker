@@ -23,30 +23,30 @@ function Header(args) {
   };
 
   return (
-      <div >
-    <Navbar {...args} className="nav-background">
-    <NavbarBrand href="/" className="nav-title">
+    <div >
+      <Navbar {...args} className="nav-background">
+        <NavbarBrand href="/" className="nav-title">
           <h1>GITINIT TO WIN IT</h1>
-    </NavbarBrand>
-    <NavbarToggler onClick={toggle} />
-    <Collapse isOpen={isOpen} navbar>
-      <Nav className="me-auto" navbar>
+        </NavbarBrand>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="me-auto" navbar>
 
-          {Auth.loggedIn() ? (
-            <>
-            <NavItem>
-              <NavLink href="/Dashboard" className="nav-link">Dashboard</NavLink>
-            </NavItem>
-              <NavLink href="/" className="nav-link" onClick={logout}>Logout</NavLink>
-            </>
-          ) : (
-            <>
-              <LoginModal />
-              <SignUpModal />
-            </>
-          )}
+            {Auth.loggedIn() ? (
+              <>
+                <NavItem>
+                  <NavLink href="/Dashboard" className="nav-link">Dashboard</NavLink>
+                </NavItem>
+                <NavLink href="/" className="nav-link" onClick={logout}>Logout</NavLink>
+              </>
+            ) : (
+              <>
+                <LoginModal />
+                <SignUpModal />
+              </>
+            )}
 
-      </Nav>
+          </Nav>
         </Collapse>
       </Navbar>
       <div className="background-image">
