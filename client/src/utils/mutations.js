@@ -39,13 +39,13 @@ mutation AddGame($title: String!, $username: String!, $winner: String, $score: S
     }
   }`;
 
-export const DELETE_GAME = gql`
-    mutation deleteGame($gameId: String!) {
-        deleteGame(gameId: $gameId) {
-            _id
-            title
+ export const DELETE_GAME = gql `
+ mutation deleteGame($_id: ID! ) {
+    deleteGame(_id: $_id) {
+      _id
     }
-}`;
+  }
+`;
 
 export const ADD_COMMENT = gql`
     mutation addComment($gameId: ID!, $commentBody: String!) {

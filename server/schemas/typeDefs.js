@@ -44,10 +44,11 @@ const typeDefs = gql`
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
+    deleteGame(_id: ID!): User
     addGame(title: String!, username: String! winner: String, score: String, players: String, gameNotes: String, image: String, link: String, createdAt: String): Game
-    deleteGame(gameId: String!): User
     addComment(gameId: ID!, commentBody: String!): Game
    }
 `;
 
   module.exports = typeDefs;
+
