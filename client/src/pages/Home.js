@@ -8,7 +8,6 @@ import { Spinner } from 'reactstrap';
 const Home = () => {
     const { loading, data } = useQuery(QUERY_GAMES);
     const games = data?.games || [];
-    console.log(games, 'games');
     return (
         <main>
             <div>

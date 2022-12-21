@@ -27,7 +27,6 @@ const GameList = ({ games, title }) => {
   
   // deletes game from database
   const handleDeleteGame = async (_id) => {
-    console.log('I was hit  GameList')
     if (!token) {
         return false;
     }

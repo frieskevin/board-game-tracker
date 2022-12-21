@@ -1,13 +1,11 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 import {
-    Button,
     CardTitle,
     CardText,
     ListGroupItem,
     ListGroup,
-    CardLink,
     Card,
     CardBody,
     Spinner
@@ -30,7 +28,6 @@ const SingleGame = (props) => {
     if (loading) {
         return <Spinner color='primary'>Loading...</Spinner>;
     }
-
     // This page displays one single game with the option to add comments
     return (
         <div>
@@ -62,7 +59,9 @@ const SingleGame = (props) => {
                 </CardBody>
                 <ListGroup flush>
                     <ListGroupItem>
+                        <Link to={`/profile/${game.username}`} className='profile-link'>
                         {game.username}
+                        </Link>
                     </ListGroupItem>
                 </ListGroup>
                 <CommentList comments={game.comments} />

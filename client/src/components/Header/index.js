@@ -16,12 +16,32 @@ import SignUpModal from '../Modal/SignUpModal';
 function Header(args) {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
+  let installed = localStorage.getItem('installed');
 
   // logs user out
   const logout = event => {
     event.preventDefault();
     Auth.logout();
   };
+
+  const install = (event)=> {
+    event.preventDefault();
+
+    if (!window.deferredPrompt) {
+      return;
+    }
+        window.deferredPrompt.prompt();
+        window.deferredPrompt = null;
+        event.target.setAttribute('disabled', true);
+        event.target.textContent = 'Installed!';
+        localStorage.setItem('installed', true);
+        installed = true;
+    };
+  
+
+  window.addEventListener('beforeinstallprompt', (event) =>{
+    window.deferredPrompt = event;
+  });
 
   return (
     <div >
@@ -46,7 +66,8 @@ function Header(args) {
                 <SignUpModal />
               </>
             )}
-            <button id="installBtn" className="btn btn-light" height="48px">INSTALL</button>
+            {!installed &&
+            <Link id="installBtn" className="nav-link" height="48px" onClick={install}>INSTALL</Link>}
           </Nav>
         </Collapse>
       </Navbar>
