@@ -14,8 +14,6 @@ const Dashboard = () => {
     const loggedIn = Auth.loggedIn();
     const me = data?.me || [];
     
-    console.log(me);
-
   
 
     return (
