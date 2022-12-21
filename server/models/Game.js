@@ -2,6 +2,7 @@ const { Schema, model } = require('mongoose');
 const commentSchema = require('./Comment');
 const dateFormat = require('../utils/dateFormat');
 
+// Schema for games that includes comments
 const gameSchema = new Schema(
     {
         title: {

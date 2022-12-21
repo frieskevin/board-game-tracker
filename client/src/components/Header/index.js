@@ -18,6 +18,7 @@ function Header(args) {
   const toggle = () => setIsOpen(!isOpen);
   let installed = localStorage.getItem('installed');
 
+  // logs user out
   const logout = event => {
     event.preventDefault();
     Auth.logout();
@@ -41,7 +42,6 @@ function Header(args) {
   window.addEventListener('beforeinstallprompt', (event) =>{
     window.deferredPrompt = event;
   });
-
 
   return (
     <div >
