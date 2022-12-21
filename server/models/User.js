@@ -1,6 +1,7 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
+// Schema for users that includes games
 const userSchema = new Schema(
     {
         username: {

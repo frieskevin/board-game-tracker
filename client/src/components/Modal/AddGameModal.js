@@ -43,9 +43,8 @@ function AddGameModal(props) {
         });
     };
 
+    // submits form and adds game to database
     const handleFormSubmit = async (event) => {
-        
-
         try {
             await addGame({
                 variables: { ...formState },

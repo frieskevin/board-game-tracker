@@ -31,7 +31,7 @@ const SingleGame = (props) => {
         return <Spinner color='primary'>Loading...</Spinner>;
     }
 
-    console.log(game);
+    // This page displays one single game with the option to add comments
     return (
         <div>
             <Card className='single-game'>

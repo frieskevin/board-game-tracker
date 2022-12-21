@@ -8,6 +8,7 @@ const CommentForm = ({ gameId }) => {
     const [characterCount, setCharacterCount] = useState(0);
     const [addComment, { error }] = useMutation(ADD_COMMENT);
 
+    // sets body of comment to input field
     const handleChange = (event) => {
         if (event.target.value.length <= 280) {
             setBody(event.target.value);
@@ -15,7 +16,7 @@ const CommentForm = ({ gameId }) => {
         }
     };
 
-    // submit form
+    // submits form and adds comment to database
     const handleFormSubmit = async (event) => {
         event.preventDefault();
 

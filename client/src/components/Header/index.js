@@ -17,14 +17,11 @@ function Header(args) {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
+  // logs user out
   const logout = event => {
     event.preventDefault();
     Auth.logout();
   };
-
-  window.addEventListener('appinstalled', (event) => {
-    console.log('👍', 'appinstalled', event);
-  });
 
   return (
     <div >
