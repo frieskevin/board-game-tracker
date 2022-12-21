@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Auth from '../../utils/auth';
 import {
   Collapse,
@@ -67,7 +67,7 @@ function Header(args) {
               </>
             )}
             {!installed &&
-            <button id="installBtn" className="btn btn-light nav-link" height="48px" onClick={install}>INSTALL</button>}
+            <Link id="installBtn" className="nav-link" height="48px" onClick={install}>INSTALL</Link>}
           </Nav>
         </Collapse>
       </Navbar>
