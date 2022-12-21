@@ -20,7 +20,7 @@
 
 ![GitInit to Win It Screenshot](./client/src/assets/images/screencapture-gitinit2winit.png)
 
-This is a single-page application that allows users to track statistics from their board gaming sessions. Statistics include the game title, players, score, winner, and any additional notes. Once a board game session is posted, other users can add comments to the game. This app was made using the full MERN Stack and is deployed using Heroku.
+This is a single-page Progressive Web Application that allows users to track statistics from their board gaming sessions. Statistics include the game title, players, score, winner, and any additional notes. Once a board game session is posted, other users can add comments to the game. This installable PWA was made using the full MERN Stack and is deployed using Heroku.
 
 ### Built With
 
@@ -33,7 +33,7 @@ This is a single-page application that allows users to track statistics from the
 
 ## Installation
 
-If you wish to install this application locally, clone this repo, then type 
+If you wish to install this application locally, click the Install button in the header. Alternately, clone this repo, then type 
 ~~~ 
 npm i 
 ~~~ 
