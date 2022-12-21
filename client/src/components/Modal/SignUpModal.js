@@ -46,9 +46,7 @@ function SignUpModal(args) {
                 variables: { ...formState }
             });
 
-            console.log(data);
             Auth.login(data.addUser.token);
-            console.log(data.addUser.token, "in signup modal");
         } catch (e) {
             console.error(e);
         }

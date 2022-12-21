@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../index.css";
 import { useMutation } from '@apollo/client';
-import { ADD_GAME} from '../../utils/mutations';
+import { ADD_GAME } from '../../utils/mutations';
 
 import {
     Button,
@@ -44,7 +44,7 @@ function AddGameModal(props) {
     };
 
     const handleFormSubmit = async (event) => {
-        
+
 
         try {
             await addGame({
@@ -72,9 +72,9 @@ function AddGameModal(props) {
     return (
         <div>
             <div className="button-div font" >
-            <Button color="danger" onClick={toggle} className='lg m-1 add-game-button font'>
-                Add Game!
-            </Button>
+                <Button color="danger" onClick={toggle} className='lg m-1 add-game-button font'>
+                    Add Game!
+                </Button>
             </div>
             <Modal isOpen={modal} toggle={toggle} fullscreen>
                 <ModalHeader size="lg" className="font game-modal-header" toggle={toggle}>Add Game!</ModalHeader>

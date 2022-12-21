@@ -79,8 +79,6 @@ const resolvers = {
                     { $pull: { games: args._id }},
                     { new: true }
                 );
-                console.log(updateUser, "did this work");
-                console.log(args);
                 const removeGame = await Game.deleteOne(
                     { _id: args._id}
                 )
