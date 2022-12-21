@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Auth from '../../utils/auth';
 import {
@@ -25,6 +25,16 @@ function Header(args) {
   window.addEventListener('appinstalled', (event) => {
     console.log('👍', 'appinstalled', event);
   });
+
+useEffect(() => {
+    let installBtn = document.getElementById('installBtn');
+    installBtn.addEventListener('click', () =>{
+      installBtn.setAttribute('disabled', true);
+      installBtn.textContent = 'Installed!';
+    })
+  });
+
+
 
   return (
     <div >
